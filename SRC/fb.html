@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="https://forum.arduino.cc/Themes/default/css/index.css?alph21">
+	<link rel="stylesheet" type="text/css" href="https://forum.arduino.cc/Themes/default/css/responsive.css?alph21">
+	<link rel="stylesheet" type="text/css" href="https://forum.arduino.cc/Themes/default/css/jquery.sceditor.css?alph21">
+	<style>
+img.avatar { max-width: 65px; max-height: 65px; }</style>
+	<script><!-- // --><![CDATA[
+		var smf_theme_url = "https://forum.arduino.cc/Themes/default";
+		var smf_default_theme_url = "https://forum.arduino.cc/Themes/default";
+		var smf_images_url = "https://forum.arduino.cc/Themes/default/images";
+		var smf_smileys_url = "https://forum.arduino.cc/Smileys";
+		var smf_scripturl = "https://forum.arduino.cc/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "UTF-8";
+		var smf_session_id = "fce7398ff4d5aba8c3b07d8662414cef";
+		var smf_session_var = "f2011db";
+		var smf_member_id;
+		var ajax_notification_text = 'Loading...';
+		var help_popup_heading_text = 'A little lost? Let me explain:';
+	// ]]></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/smf_jquery_plugins.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/script.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/theme.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/editor.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/jquery.sceditor.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/jquery.sceditor.bbcode.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/jquery.sceditor.smf.js?alph21"></script>
+	<script src="https://forum.arduino.cc/Themes/default/scripts/topic.js?alph21"></script>
+	<script><!-- // --><![CDATA[
+		var smf_smileys_url = 'https://forum.arduino.cc/Smileys/arduino';
+		var bbc_quote_from = 'Quote from';
+		var bbc_quote = 'Quote';
+		var bbc_search_on = 'on';
+	// ]]></script>
+	<meta name="description" content="Optocoupler &amp; MOSFET for ~75W heater at 12VDC">
+	<title>Optocoupler &amp; MOSFET for ~75W heater at 12VDC</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#557EA0">
+	<link rel="canonical" href="https://forum.arduino.cc/index.php?topic=419365.0">
+	<link rel="help" href="https://forum.arduino.cc/index.php?action=help">
+	<link rel="contents" href="https://forum.arduino.cc/index.php">
+	<link rel="search" href="https://forum.arduino.cc/index.php?action=search">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - RSS" href="https://forum.arduino.cc/index.php?type=rss2;action=.xml">
+	<link rel="alternate" type="application/rss+xml" title="Arduino Forum - Atom" href="https://forum.arduino.cc/index.php?type=atom;action=.xml">
+	<link rel="index" href="https://forum.arduino.cc/index.php?board=9.0">
+</head>
+<body id="chrome" class="action_messageindex board_9"><link rel="stylesheet" href="//content.arduino.cc/legacy/css/foundation2.css" type="text/css"><link rel="stylesheet" href="https://forum.arduino.cc/Themes/default/css/common-hacked.css" type="text/css"><link rel="stylesheet" href="//content.arduino.cc/legacy/new_home/css/new_style.css" type="text/css"><link rel="stylesheet" href="//content.arduino.cc/legacy/fonts/fonts.css" type="text/css"><link rel="stylesheet" href="//content.arduino.cc/legacy/css/arduino-icons.css" type="text/css"><link rel="stylesheet" href="https://cdn.arduino.cc/header-footer/prod/index.v2.css" type="text/css"><link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,600;0,700;1,400&display=swap" rel="stylesheet" /><div id="header" class="temporary"></div>
+
+				<div class="navigate_section" id="headerbread">
+          <div class="row" style="max-width: 960px!important;">
+          <div class="small-12">
+					<ul>
+          
+						<li>
+					<a href="https://forum.arduino.cc/index.php"><span>Arduino Forum</span></a>
+						</li>
+						<li>
+							<span class="dividers"> > </span>
+					<a href="https://forum.arduino.cc/index.php#c2"><span>Using Arduino</span></a>
+						</li>
+						<li>
+							<span class="dividers"> > </span>
+					<a href="https://forum.arduino.cc/index.php?board=9.0"><span>Motors, Mechanics, Power and CNC</span></a>
+						</li>
+						<li class="last">
+							<span class="dividers"> > </span>
+					<a href="https://forum.arduino.cc/index.php?topic=419365.0"><span>Optocoupler &amp; MOSFET for ~75W heater at 12VDC</span></a>
+						</li>
+					</ul>
+        </div>
+				</div>
+				</div>
+  <div class="row collapse">
+  <div class="small-12 columns">
+	<div id="wrapper">
+    <div id="upper_section">
+			<div id="inner_section">
+				<div id="main_menu">
+					<ul class="dropmenu" id="menu_nav">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content_section">
+			<div id="main_content_section">
+
+			<a id="msg2887922"></a>
+			<div class="pagesection top">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_print" href="https://forum.arduino.cc/index.php?action=printpage;topic=419365.0" rel="nofollow">Print</a>
+		</div>
+				 <a href="#bot" class="topbottom floatleft">Go Down</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="forumposts">
+				<div class="cat_bar">
+					<h3 class="catbg">
+						<span id="top_subject" class="topic-icon topic-icon-">Topic: Optocoupler &amp; MOSFET for ~75W heater at 12VDC&nbsp;<span>(Read 3108 times)</span></span>
+						<span class="nextlinks floatright"><a href="https://forum.arduino.cc/index.php?topic=419365.0;prev_next=prev#new">previous topic</a> - <a href="https://forum.arduino.cc/index.php?topic=419365.0;prev_next=next#new">next topic</a></span>
+					</h3>
+				</div>
+				<form action="https://forum.arduino.cc/index.php?action=quickmod2;topic=419365.0" method="post" accept-charset="UTF-8" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return oQuickModify.bInEditMode ? oQuickModify.modifySave('fce7398ff4d5aba8c3b07d8662414cef', 'f2011db') : false">
+				<div class="windowbg">
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=458375" title="View the profile of JaBa" class="pm_icon">JaBa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=458375"><img class="avatar" src="https://content.arduino.cc/avatars/default.svg" alt="avatar_JaBa" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"></li>
+								<li class="postgroup">God Member</li>
+								<li class="postcount">Posts: 531</li>
+								<li class="custom karma">Karma: 94&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=458375;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" >
+									<img src="https://forum.arduino.cc/Themes/default/images/post/clip.png" alt="">
+								</div>
+								<div id="subject_2887922" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2887922#msg2887922" rel="nofollow">Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2887922#msg2887922" rel="nofollow" title=" - Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 19, 2016, 03:16 pm</a>
+									<span class="smalltext modified" id="modified_2887922"></span>
+								</h5>
+								<div id="msg_2887922_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2887922">Hello and thanks for taking time to possibly help me.<br><br>I need to build a device to switch about 75W of 12 VDC power from an Arduino. I also want the switching to be completely isolated from the Arduino. After some research I came across this posting.<br><br><a href="http://electronics.stackexchange.com/questions/17116/how-to-drive-a-mosfet-with-an-optocoupler" class="bbc_link" target="_blank">http://electronics.stackexchange.com/questions/17116/how-to-drive-a-mosfet-with-an-optocoupler</a><br><br>I am planning on turning an electric heater on/off. I would like to keep the option open to PWM it but that may not be necessary (more nice to have). The power source is a 12V battery (so max of ~14.8VDC). The heater is rated ~70W. When in use, the heater could remain on for hours.<br><br>The parts I am planning on using are:<br><br>IC1 - PC817 Optocoupler<br>T1 - IRL40B209 N-Channel MOSFET<br>D1 - RL204<br>D2 - 1N524 Zener<br>R1 - 330 Ohm<br>R2/R3 - 2k2 Ohm<br><br>Cheaper parts may be available but I am more interested in availability and having something that works than saving money.<br><br>If possible, I may want to use PWM on pin 3, with the default frequency of 500Hz.<br><br>I adapted a schematic from the above internet link. I have attached a JPG file to this post.<br>&nbsp;<br>The diodes are probably not needed for a heater but I have decided to include them just so the circuit is also compatible for other things. If I ever get this right, I don&#039;t want to have to start all over again.<br><br>The IRL40B209 has Rds On of 1.25mΩ. If I assume power switching of less than 100 Watts and voltages between 10 and 15 Volts, are my calculations correct that I have less than a quarter Watt of heat to dissipate? If that is true, the heat sink I will use anyway isn&#039;t even necessary. (10A * 10A * 1.25mΩ = 0.125W ?)<br><br>So, my questions are: Does this circuit look viable for the described switching? Should it be possible to use PWM at 500Hz?<br></div>
+							</div>
+							<div id="msg_2887922_footer" class="attachments">
+									<div class="floatleft">
+										<div class="attachments_bot">
+											<a href="https://forum.arduino.cc/index.php?action=dlattach;topic=419365.0;attach=177839"><img src="https://forum.arduino.cc/Themes/default/images/icons/clip.png" class="centericon" alt="*">&nbsp;APS.jpg</a> 
+											<br>29.86 KB<br>downloaded 17761 times
+										</div>
+									</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg2888544"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=20276" title="View the profile of MarkT" class="pm_icon">MarkT</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=20276"><img class="avatar" src="https://content.arduino.cc/avatars/default.svg" alt="avatar_MarkT" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 35,590</li>
+								<li class="custom karma">Karma: 1847&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=20276;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Arduino rocks</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2888544" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2888544#msg2888544" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #1 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2888544#msg2888544" rel="nofollow" title="Reply #1 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 20, 2016, 01:09 am</a>
+									<span class="smalltext modified" id="modified_2888544"></span>
+								</h5>
+								<div id="msg_2888544_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2888544">Looks reasonable, and yes you don&#39;t need D1 for a resistive load, only for an inductive load like a motor or relay.<br><br>I make the current 6A, and power dissipation &lt; 0.1W<br><br>With PWM you&#39;ll have to checkout the switching speed, as switching losses may easily come to dominate.<br>If so that can be cured by adding a MOSFET driver which will drive the MOSFET gate several orders of<br>magnitude faster.<br><br>You could drive the MOSFET gate with more like 10V if you want.</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_2888544_signature">[ I DO NOT respond to personal messages, I WILL delete them unread, use the forum please ]</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg2888680"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="on" title="Online"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=134380" title="View the profile of TomGeorge" class="pm_icon">TomGeorge</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=134380"><img class="avatar" src="https://content.arduino.cc/avatars/2/TomGeorge.jpeg" alt="avatar_TomGeorge" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="title">Design and Repair of industrial control systems.</li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 23,384</li>
+								<li class="custom karma">Karma: 1541&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=134380;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Electronics Engineer/Industrial Control</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2888680" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2888680#msg2888680" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #2 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2888680#msg2888680" rel="nofollow" title="Reply #2 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 20, 2016, 06:31 am</a>
+									<span class="smalltext modified" id="modified_2888680"></span>
+								</h5>
+								<div id="msg_2888680_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2888680">Hi,<br>OPs schematic<br><img src="http://forum.arduino.cc/index.php?action=dlattach;topic=419365.0;attach=177839" alt="" width="500" height="253" class="bbc_img resized"><br>Yes looks good..<br><br>Tom..... <img src="https://forum.arduino.cc/Smileys/arduino/smiley.gif" alt="&#58;&#41;" title="Smiley" class="smiley"> </div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_2888680_signature">Everything runs on smoke, let the smoke out, it stops running....</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg2888721"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=458375" title="View the profile of JaBa" class="pm_icon">JaBa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=458375"><img class="avatar" src="https://content.arduino.cc/avatars/default.svg" alt="avatar_JaBa" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"></li>
+								<li class="postgroup">God Member</li>
+								<li class="postcount">Posts: 531</li>
+								<li class="custom karma">Karma: 94&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=458375;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2888721" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2888721#msg2888721" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #3 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2888721#msg2888721" rel="nofollow" title="Reply #3 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 20, 2016, 07:58 am</a>
+									<span class="smalltext modified" id="modified_2888721"></span>
+								</h5>
+								<div id="msg_2888721_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2888721">Hello.<br><br>MarkT - Do you mean potentially use a MOSFET Driver instead of the optocoupler? When you say drive with 10V, you mean using different resistors on R2/R3 so as not to divide the incoming voltage in half, but rather leaving it closer to the source voltage?<br><br>TomGeorge - I am not sure what you are saying. That it Looks good is always well heard, but what were the schematics supposed to be? All I see is a small black &amp; white X.<br><br>Thanks to both for comments.</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg2888813"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="on" title="Online"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=134380" title="View the profile of TomGeorge" class="pm_icon">TomGeorge</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=134380"><img class="avatar" src="https://content.arduino.cc/avatars/2/TomGeorge.jpeg" alt="avatar_TomGeorge" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="title">Design and Repair of industrial control systems.</li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 23,384</li>
+								<li class="custom karma">Karma: 1541&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=134380;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Electronics Engineer/Industrial Control</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2888813" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2888813#msg2888813" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #4 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2888813#msg2888813" rel="nofollow" title="Reply #4 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 20, 2016, 10:34 am</a>
+									<span class="smalltext modified" id="modified_2888813"><span class="lastedit">Last Edit</span>: Aug 20, 2016, 10:44 am by TomGeorge</span>
+								</h5>
+								<div id="msg_2888813_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2888813">Hi,<br><br>To quote the OPs first post.<br><div class="quoteheader">Quote</div><blockquote class="bbc_standard_quote">I adapted a schematic from the above internet link. I have attached a JPG file to this post.</blockquote><div class="quotefooter"></div>To quote the OPs post #3<br><div class="quoteheader">Quote</div><blockquote class="bbc_standard_quote">That it Looks good is always well heard, but what were the schematics supposed to be? All I see is a small black &amp; white X.</blockquote><div class="quotefooter"></div><del>How can you adapt a schematic and not understand it.<br></del><br><del>Is see X1 and X2, but there is a lot more in the diagram.</del><br><br>Looks good &nbsp;== I can&#39;t see any problems with it.<br><br>What is your electronics, programming, arduino, hardware experience?<br><br>Tom.... <img src="https://forum.arduino.cc/Smileys/arduino/smiley.gif" alt="&#58;&#41;" title="Smiley" class="smiley"><br>Edit, Sorry I now understand (I think), what are you using to view this forum?<br>Do you literally see x&#39;s not an image.<br>Download the attached file, all I have done is put your schematic up on the forum so those with platforms that have problems with attachements can see what you are talking about.</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_2888813_signature">Everything runs on smoke, let the smoke out, it stops running....</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg2889175"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=458375" title="View the profile of JaBa" class="pm_icon">JaBa</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=458375"><img class="avatar" src="https://content.arduino.cc/avatars/default.svg" alt="avatar_JaBa" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"></li>
+								<li class="postgroup">God Member</li>
+								<li class="postcount">Posts: 531</li>
+								<li class="custom karma">Karma: 94&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=458375;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2889175" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2889175#msg2889175" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #5 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2889175#msg2889175" rel="nofollow" title="Reply #5 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 20, 2016, 04:49 pm</a>
+									<span class="smalltext modified" id="modified_2889175"></span>
+								</h5>
+								<div id="msg_2889175_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2889175">Yes TomGeorge, we seem to have a communication Problem. Of course I could understand the schematic which I adapted. I literally see a small black and White, single &quot;X&quot; Image. I am using Internet Explorer 11 on this Laptop. That &quot;X&quot; is what I have often encountered while browsing the Internet and the Image is no longer available. I had one year of rather intensive electronic Training followed by three years experience with the Army but it has been over 30 years now. I am nothing more than an occassional electronic Hobbyist. I am a professional programmer in many different languages but never done professional work in C.<br><br>I wondered what you meant by &quot;OPs schematic&quot;. I wondered if &quot;OP&quot; were something like &quot;Eagle&quot;, but I guess &quot;OP&quot; is an Abbreviation for &quot;original poster&quot;? I still Need to work on understanding the Forum Jargon.<br><br>Thanks for the comments and especially for coming back and Clearing up the communication Problem.</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg2889184"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=20276" title="View the profile of MarkT" class="pm_icon">MarkT</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=20276"><img class="avatar" src="https://content.arduino.cc/avatars/default.svg" alt="avatar_MarkT" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 35,590</li>
+								<li class="custom karma">Karma: 1847&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=20276;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Arduino rocks</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2889184" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2889184#msg2889184" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #6 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2889184#msg2889184" rel="nofollow" title="Reply #6 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 20, 2016, 04:54 pm</a>
+									<span class="smalltext modified" id="modified_2889184"></span>
+								</h5>
+								<div id="msg_2889184_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2889184"><div class="quoteheader"><a href="https://forum.arduino.cc/index.php?msg=2888721">Quote from: JaBa on Aug 20, 2016, 07:58 am</a></div><blockquote class="bbc_standard_quote">Hello.<br><br>MarkT - Do you mean potentially use a MOSFET Driver instead of the optocoupler? When you say drive with 10V, you mean using different resistors on R2/R3 so as not to divide the incoming voltage in half, but rather leaving it closer to the source voltage?<br></blockquote><div class="quotefooter"></div>As well as the opto coupler, the coupler drives the gate driver, the gate driver drives the MOSFET gate hard.<br><div class="quoteheader">Quote</div><blockquote class="bbc_standard_quote">TomGeorge - I am not sure what you are saying. That it Looks good is always well heard, but what were the schematics supposed to be? All I see is a small black &amp; white X.<br><br>Thanks to both for comments.<br></blockquote><div class="quotefooter"></div></div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_2889184_signature">[ I DO NOT respond to personal messages, I WILL delete them unread, use the forum please ]</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg2889865"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="on" title="Online"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=134380" title="View the profile of TomGeorge" class="pm_icon">TomGeorge</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=134380"><img class="avatar" src="https://content.arduino.cc/avatars/2/TomGeorge.jpeg" alt="avatar_TomGeorge" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="title">Design and Repair of industrial control systems.</li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 23,384</li>
+								<li class="custom karma">Karma: 1541&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=134380;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Electronics Engineer/Industrial Control</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_2889865" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg2889865#msg2889865" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #7 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg2889865#msg2889865" rel="nofollow" title="Reply #7 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Aug 21, 2016, 04:48 am</a>
+									<span class="smalltext modified" id="modified_2889865"></span>
+								</h5>
+								<div id="msg_2889865_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_2889865">Hi,<br>JaBa can I suggest, unless you work for Microsoft, you load up Google as your browser, and use it.<br>Both browsers will run on the same computer.<br><br>IE 8 was the last Explorer I used, and have no regrets forgetting about IE.<br><br>Tom..... <img src="https://forum.arduino.cc/Smileys/arduino/smiley.gif" alt="&#58;&#41;" title="Smiley" class="smiley"> <br>PS. I agree with MarkT, driver IC would be more suitable.<br></div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_2889865_signature">Everything runs on smoke, let the smoke out, it stops running....</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg3540347"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=145173" title="View the profile of Lars81" class="pm_icon">Lars81</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=145173"><img class="avatar" src="//dcw9y8se13llu.cloudfront.net/avatars/default.png" alt="avatar_Lars81" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/star.gif" alt="*"></li>
+								<li class="postgroup">Full Member</li>
+								<li class="postcount">Posts: 145</li>
+								<li class="custom karma">Karma: 8&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=145173;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_3540347" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg3540347#msg3540347" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #8 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg3540347#msg3540347" rel="nofollow" title="Reply #8 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Dec 29, 2017, 12:55 am</a>
+									<span class="smalltext modified" id="modified_3540347"></span>
+								</h5>
+								<div id="msg_3540347_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_3540347">What is the purpose of the zener diode in this circuit? If omitted, should R3 remain unchanged?<br><br>If I understand correctly, this zener restricts the gate voltage to 18V (even though maximum voltage from the battery is 14.4V), is that so?</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg2">
+					<a id="msg3540441"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="on" title="Online"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=134380" title="View the profile of TomGeorge" class="pm_icon">TomGeorge</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=134380"><img class="avatar" src="https://content.arduino.cc/avatars/2/TomGeorge.jpeg" alt="avatar_TomGeorge" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="title">Design and Repair of industrial control systems.</li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 23,384</li>
+								<li class="custom karma">Karma: 1541&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=134380;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Electronics Engineer/Industrial Control</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_3540441" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg3540441#msg3540441" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #9 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg3540441#msg3540441" rel="nofollow" title="Reply #9 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Dec 29, 2017, 02:47 am</a>
+									<span class="smalltext modified" id="modified_3540441"><span class="lastedit">Last Edit</span>: Dec 29, 2017, 02:48 am by TomGeorge</span>
+								</h5>
+								<div id="msg_3540441_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_3540441"><div class="quoteheader"><a href="https://forum.arduino.cc/index.php?msg=3540347">Quote from: Lars81 on Dec 29, 2017, 12:55 am</a></div><blockquote class="bbc_standard_quote">What is the purpose of the zener diode in this circuit? If omitted, should R3 remain unchanged?<br><br>If I understand correctly, this zener restricts the gate voltage to 18V (even though maximum voltage from the battery is 14.4V), is that so?<br></blockquote><div class="quotefooter"></div>I would say originally the circuit was setup for generic use.<br>That is the supply could be any voltage you had.<br>Yes the zener keeps the max gate voltage to 18V, which should have the gate switching the MOSFET fully ON.<br>R3 is to pull the gate to source when there is no gate drive, usually it is 10K.<br><br>It may have been dropped to 2K2 so only 6V was applied to the logic level MOFET.<br><br>Tom.. <img src="https://forum.arduino.cc/Smileys/arduino/smiley.gif" alt="&#58;&#41;" title="Smiley" class="smiley"></div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_3540441_signature">Everything runs on smoke, let the smoke out, it stops running....</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				<div class="windowbg">
+					<a id="msg3541347"></a>
+					<div class="post_wrapper">
+						<div class="poster">
+							<h4>
+								<span class="off" title="Offline"></span>
+								<a href="https://forum.arduino.cc/index.php?action=profile;u=20276" title="View the profile of MarkT" class="pm_icon">MarkT</a>
+							</h4>
+							<ul class="user_info">
+								<li class="avatar">
+									<a href="https://forum.arduino.cc/index.php?action=profile;u=20276"><img class="avatar" src="https://content.arduino.cc/avatars/default.svg" alt="avatar_MarkT" onerror="this.src='//dcw9y8se13llu.cloudfront.net/avatars/default.png';"></a>
+								</li>
+								<li class="icons"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"><img src="https://forum.arduino.cc/Themes/default/images/membericons/stargold.gif" alt="*"></li>
+								<li class="postgroup">Brattain Member</li>
+								<li class="postcount">Posts: 35,590</li>
+								<li class="custom karma">Karma: 1847&nbsp;&nbsp;<a href="https://forum.arduino.cc/index.php?action=karma;sa=applaud;uid=20276;f2011db=fce7398ff4d5aba8c3b07d8662414cef">[add]</a></li>
+								<li class="blurb">Arduino rocks</li>
+							</ul>
+						</div>
+						<div class="postarea">
+							<div class="keyinfo">
+								<div class="messageicon" style="position: absolute; z-index: -1;">
+									<img src="https://forum.arduino.cc/Themes/default/images/post/xx.png" alt="">
+								</div>
+								<div id="subject_3541347" class="subject_title"><a href="https://forum.arduino.cc/index.php?topic=419365.msg3541347#msg3541347" rel="nofollow">Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC</a></div>
+								<div class="page_number floatright">
+									 #10 
+								</div>
+								<h5>
+									<a href="https://forum.arduino.cc/index.php?topic=419365.msg3541347#msg3541347" rel="nofollow" title="Reply #10 - Re: Optocoupler &amp; MOSFET for ~75W heater at 12VDC" class="smalltext">Dec 29, 2017, 06:33 pm</a>
+									<span class="smalltext modified" id="modified_3541347"></span>
+								</h5>
+								<div id="msg_3541347_quick_mod"></div>
+							</div>
+							<div class="post">
+								<div class="inner" id="msg_3541347">A zener is a pretty standard way to protect a MOSFET gate from overvoltage of whatever origin, be it<br>supply noise, static, inductive rebound of the source electrode on fast switching.&nbsp; The gate oxide on even<br>a big beefy power MOSFET is extremely delicate and will be punctured by the briefest of over-voltage events,<br>given its a layer of silica a few nanometres thick.<br><br>Its very easy, for instance, to damage a MOSFET in handling if anti-static precautions aren&#39;t employed.&nbsp; Some<br>devices have built in protection on the die and its a great idea that&#39;s not used enough.</div>
+							</div>
+							<div class="under_message">
+							</div>
+						</div>
+						<div class="moderatorbar">
+							<div class="signature" id="msg_3541347_signature">[ I DO NOT respond to personal messages, I WILL delete them unread, use the forum please ]</div>
+						</div>
+					</div>
+				</div>
+				<hr class="post_separator">
+				</form>
+			</div>
+			<div class="pagesection">
+				
+		<div class="buttonlist floatright">
+			
+				<a class="button-forum  button_strip_print" href="https://forum.arduino.cc/index.php?action=printpage;topic=419365.0" rel="nofollow">Print</a>
+		</div>
+				 <a href="#main_content_section" class="topbottom floatleft" id="bot">Go Up</a>
+				<div class="pagelinks floatleft">
+					<span class="pages">Pages: </span><span class="current_page">[1]</span> 
+				</div>
+			</div>
+			<div id="moderationbuttons">
+				
+			</div>
+			<div id="display_jump_to">&nbsp;</div>
+			<br class="clear">
+				<script><!-- // --><![CDATA[
+					var oQuickReply = new QuickReply({
+						bDefaultCollapsed: false,
+						iTopicId: 419365,
+						iStart: 0,
+						sScriptUrl: smf_scripturl,
+						sImagesUrl: smf_images_url,
+						sContainerId: "quickReplyOptions",
+						sImageId: "quickReplyExpand",
+						sClassCollapsed: "toggle_up",
+						sClassExpanded: "toggle_down",
+						bIsFull: true
+					});
+					if ('XMLHttpRequest' in window)
+					{
+						var oQuickModify = new QuickModify({
+							sScriptUrl: smf_scripturl,
+							sClassName: 'quick_edit',
+							bShowModify: true,
+							iTopicId: 419365,
+							sTemplateBodyEdit: '\n\t\t\t\t\t\t\t\t<div id="quick_edit_body_container">\n\t\t\t\t\t\t\t\t\t<div id="error_box" class="error"><' + '/div>\n\t\t\t\t\t\t\t\t\t<textarea class="editor" name="message" rows="12" style="width: 100%; margin-bottom: 10px;" tabindex="1">%body%<' + '/textarea><br>\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="f2011db" value="fce7398ff4d5aba8c3b07d8662414cef">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="topic" value="419365">\n\t\t\t\t\t\t\t\t\t<input type="hidden" name="msg" value="%msg_id%">\n\t\t\t\t\t\t\t\t\t<div class="righttext">\n\t\t\t\t\t\t\t\t\t\t<input type="submit" name="post" value="Save" tabindex="2" onclick="return oQuickModify.modifySave(\'fce7398ff4d5aba8c3b07d8662414cef\', \'f2011db\');" accesskey="s" class="button_submit">&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" tabindex="3" onclick="return oQuickModify.modifyCancel();" class="button_submit">\n\t\t\t\t\t\t\t\t\t<' + '/div>\n\t\t\t\t\t\t\t\t<' + '/div>',
+							sTemplateSubjectEdit: '<input type="text" name="subject" value="%subject%" size="80" maxlength="80" tabindex="4" class="input_text">',
+							sTemplateBodyNormal: '%body%',
+							sTemplateSubjectNormal: '<a hr'+'ef="' + smf_scripturl + '?topic=419365.msg%msg_id%#msg%msg_id%" rel="nofollow">%subject%<' + '/a>',
+							sTemplateTopSubject: 'Topic: %subject% &nbsp;(Read 3108 times)',
+							sTemplateReasonEdit: '<input type="text" name="modify_reason" value="%modify_reason%" size="80" maxlength="80" tabindex="5" class="input_text">)',
+							sTemplateReasonNormal: '%modify_text',
+							sErrorBorderStyle: '1px solid red'
+						});
+
+						aJumpTo[aJumpTo.length] = new JumpTo({
+							sContainerId: "display_jump_to",
+							sJumpToTemplate: "<label class=\"smalltext\" for=\"%select_id%\">Jump to:<" + "/label> %dropdown_list%",
+							iCurBoardId: 9,
+							iCurBoardChildLevel: 0,
+							sCurBoardName: "Motors, Mechanics, Power and CNC",
+							sBoardChildLevelIndicator: "==",
+							sBoardPrefix: "=> ",
+							sCatSeparator: "-----------------------------",
+							sCatPrefix: "",
+							sGoButtonLabel: "Go"
+						});
+
+						aIconLists[aIconLists.length] = new IconList({
+							sBackReference: "aIconLists[" + aIconLists.length + "]",
+							sIconIdPrefix: "msg_icon_",
+							sScriptUrl: smf_scripturl,
+							bShowModify: true,
+							iBoardId: 9,
+							iTopicId: 419365,
+							sSessionId: smf_session_id,
+							sSessionVar: smf_session_var,
+							sLabelIconList: "Message icon",
+							sBoxBackground: "transparent",
+							sBoxBackgroundHover: "#ffffff",
+							iBoxBorderWidthHover: 1,
+							sBoxBorderColorHover: "#adadad" ,
+							sContainerBackground: "#ffffff",
+							sContainerBorder: "1px solid #adadad",
+							sItemBorder: "1px solid #ffffff",
+							sItemBorderHover: "1px dotted gray",
+							sItemBackground: "transparent",
+							sItemBackgroundHover: "#e0e0f0"
+						});
+					}
+				// ]]></script>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+           <br /><style>.pagefooter a { color: white !important; }</style><div id="spacer"></div>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-22581631-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-22581631-3');
+	</script>
+    <div>
+      <div id="newsletter-modal"></div>
+      <div id="footer"></div>
+    </div>
+    <script src="https://cdn.arduino.cc/header-footer/prod/index.v2.js" type="text/javascript"></script>
+    <script>
+      var auth = new window.arduinoHF.CustomAuth({
+        token: null ? null: null,
+        login_url: 'https://forum.arduino.cc/login.php?redirect_uri=https%3A%2F%2Fforum.arduino.cc%2Findex.php%3Ftopic%3D419365.0&do_login=1',
+        logout_url: 'https://login.arduino.cc/v2/logout?returnTo=https%3A%2F%2Fforum.arduino.cc%2Flogin.php%3Ferror%3Dloggedout&client_id=gTljiaf7cNKnq1d0w7IK71ib2kIwJb7W',
+        profile: {
+          picture: ''
+        }
+    });
+
+			var opts = {
+				env: 'prod',
+				search: {
+					tab: 'forum'
+				},
+				style: 'arduino',
+				logo: {
+					url: 'https://www.arduino.cc'
+				}
+			};
+
+			if('prod' === 'dev') {
+				opts.menu = [{
+					url: 'http://forum.arduino.cc', // url of item
+					name: 'Forum', // label which will be use for show
+				}];
+			}
+
+			var header = new window.arduinoHF.Header(document.getElementById('header'), window.auth, opts);
+      header.init();
+
+      var footer = new arduinoHF.Footer(document.getElementById('footer'), {env: 'prod', style: 'arduino', helpCenter: null});
+
+    </script>
+  <div id="ajax_in_progress" style="display: none;">Loading...</div>
+<script><!-- // --><![CDATA[
+	function triggerCron() {
+		var tempImage = new Image();
+		tempImage.src = 'https://forum.arduino.cc' + "/cron.php?ts=1610348355";
+	}
+	window.setTimeout(triggerCron, 1);
+// ]]></script>
+    <script src="//content.arduino.cc/legacy/new_home/js/vendor/modernizr.js"></script>
+    <!--[if gte IE 9]><!-->
+    <script src="//content.arduino.cc/legacy/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <!--<![endif]-->
+    <!--[if IE 8]>
+    <script src="//content.arduino.cc/legacy/js/foundation_ie8.min.js"></script>
+    <script src="//content.arduino.cc/legacy/js/ie8/jquery.foundation.alerts.js"></script>
+    <script src="//content.arduino.cc/legacy/js/app.js"></script>
+		<![endif]-->
+		<script>
+		// Adv banner configuration
+		var arduinoAdvOptions = {
+			breakpointDesktop: 480,
+			breakpointMobile: 480,
+			zoneIdDesktop: 561,
+			zoneIdTablet: 560,
+			zoneIdMobile: 560
+		};
+
+		jQuery('.boardindex_table .main_container:nth-child(1)').append('<div id="ad_container_zone" class="adv-banner"></div>');
+		jQuery('#forumposts form .windowbg:nth-of-type(1)').after('<div id="ad_container_zone" class="adv-banner"></div>');
+
+		</script>
+		<!-- Script used by adv banner -->
+		<script type="text/javascript"
+					src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+		<script type="text/javascript" src="https://content.arduino.cc/banner/banner.js"></script>
+</body>
+</html>
