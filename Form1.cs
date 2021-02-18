@@ -312,12 +312,7 @@ namespace EtherFACE1
 
 
 
-        private void buttonXmlStore_Click(object sender, EventArgs e)
-        {
-            writeData(FramGenerator("xml", "store", metroTextRead.Text + xmlread, true));
-        }
-
-
+     
 
         private void communicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -365,7 +360,10 @@ namespace EtherFACE1
 
             byte _frameHeader;
 
+            int lenghtOfBytearray;
             int extend = 0;
+
+            byte[] bytes;
 
             byte preheader1 = 0xAA;
             byte preheader2 = 0xAB;
@@ -406,35 +404,55 @@ namespace EtherFACE1
 
 
             //taking bytes array of input data string
-            byte[] bytes = Encoding.ASCII.GetBytes(data);
-            int lenghtOfBytearray = bytes.Length + 3 + extend;
+            if (data == null)
+            {
+                lenghtOfBytearray =  3 + extend;
+                var Frame = new byte[lenghtOfBytearray];
+
+                Frame[0] = preheader1;
+                Frame[1] = preheader2;
+                Frame[2] = _frameHeader;
+
+                if (endstate)
+                {
+                    Frame[lenghtOfBytearray - 1] = 0xff;
+                }
+
+                return Frame;
+
+            }
+            else {
+                bytes = Encoding.ASCII.GetBytes(data);
+                lenghtOfBytearray = bytes.Length + 3 + extend;
+
+                var Frame = new byte[lenghtOfBytearray];
+
+                Frame[0] = preheader1;
+                Frame[1] = preheader2;
+                Frame[2] = _frameHeader;
+
+                if (endstate)
+                {
+                    Frame[lenghtOfBytearray - 1] = 0xff;
+                    for (int i = 3; i < lenghtOfBytearray - 1; i++)
+                    {
+                        Frame[i] = bytes[i - 3];
+                    }
+                }
+                else
+                {
+                    for (int i = 3; i < lenghtOfBytearray; i++)
+                    {
+                        Frame[i] = bytes[i - 3];
+                    }
+                }
+
+                return Frame;
+
+
+            }
 
             // making new frame
-            var Frame = new byte[lenghtOfBytearray];
-
-            Frame[0] = preheader1;
-            Frame[1] = preheader2;
-            Frame[2] = _frameHeader;
-
-
-            //assigning bytes to output Frame
-            if (endstate)
-            {
-                Frame[lenghtOfBytearray - 1] = 0xff;
-
-                for (int i = 3; i < lenghtOfBytearray - 1; i++)
-                {
-                    Frame[i] = bytes[i - 3];
-                }
-            }
-            else
-            {
-                for (int i = 3; i < lenghtOfBytearray; i++)
-                {
-                    Frame[i] = bytes[i - 3];
-                }
-            }
-            return Frame;
         }
 
         private void label9_Click_1(object sender, EventArgs e)
@@ -502,7 +520,7 @@ namespace EtherFACE1
             }
             else
             {
-                richTextBoxXmlEditor.AppendText(s);
+                //richTextBoxXmlEditor.AppendText(s);
                 //MessageBox.Show(s);
 
             }
@@ -572,7 +590,8 @@ namespace EtherFACE1
             }
 
             timer1.Enabled = false;
-            this.pictureBox12.BackColor = Color.Blue;
+               
+            this.radioButtonOn.BackColor = Color.SkyBlue;
 
         }
 
@@ -582,15 +601,56 @@ namespace EtherFACE1
             if (timer1State)
             {
 
-                this.pictureBox12.BackColor = Color.Crimson;
+                this.radioButtonOn.BackColor = Color.LimeGreen;
             }
             else
             {
-                this.pictureBox12.BackColor = Color.Blue;
+                this.radioButtonOn.BackColor = Color.SkyBlue;
             }
 
             timer1State = !timer1State;
         }
+
+
+
+
+        private void buttonRunning_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator("xml", "running", null, false));
+            labelMessenger.Text = "RUNNING XML IS FETCHED ";
+        }
+
+        private void buttonStorage_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator("xml", "storage", richTextBoxFileName.Text, false));
+            labelMessenger.Text = "STORAGE HAS BEEN LOADED";
+        }
+
+        private void buttonRead_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator("xml", "read", richTextBoxFileName.Text, false));
+            labelMessenger.Text = "DONE READING";
+        }
+
+        private void buttonActivate_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator("xml", "activate", richTextBoxFileName.Text, false));
+            labelMessenger.Text = "DONE ACTIVATING";
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator("xml", "delete", richTextBoxFileName.Text, false));
+            labelMessenger.Text = "DONE DELETING";
+        }
+
+        private void buttonXmlStore_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator("xml", "store", richTextBoxFileName.Text + xmlread, true));
+            labelMessenger.Text = "DONE STORING";
+        }
+
+
     }
 }
 

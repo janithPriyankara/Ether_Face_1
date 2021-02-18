@@ -132,7 +132,7 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonActivate = new System.Windows.Forms.Button();
             this.buttonRead = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelMessenger = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonStorage = new System.Windows.Forms.Button();
@@ -1199,7 +1199,7 @@
             this.panelXml.Controls.Add(this.buttonDelete);
             this.panelXml.Controls.Add(this.buttonActivate);
             this.panelXml.Controls.Add(this.buttonRead);
-            this.panelXml.Controls.Add(this.label8);
+            this.panelXml.Controls.Add(this.labelMessenger);
             this.panelXml.Controls.Add(this.progressBar2);
             this.panelXml.Controls.Add(this.label7);
             this.panelXml.Controls.Add(this.buttonStorage);
@@ -1241,6 +1241,7 @@
             this.toolTip1.SetToolTip(this.buttonDelete, "This will delete Xml file on the master specified by given File name.");
             this.buttonDelete.UseCompatibleTextRendering = true;
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonActivate
             // 
@@ -1256,6 +1257,7 @@
             this.toolTip1.SetToolTip(this.buttonActivate, "This will activate xml file on the master specified by given name.");
             this.buttonActivate.UseCompatibleTextRendering = true;
             this.buttonActivate.UseVisualStyleBackColor = true;
+            this.buttonActivate.Click += new System.EventHandler(this.buttonActivate_Click);
             // 
             // buttonRead
             // 
@@ -1271,17 +1273,18 @@
             this.toolTip1.SetToolTip(this.buttonRead, "This will give the XML file specified by given Name.");
             this.buttonRead.UseCompatibleTextRendering = true;
             this.buttonRead.UseVisualStyleBackColor = true;
+            this.buttonRead.Click += new System.EventHandler(this.buttonRead_Click);
             // 
-            // label8
+            // labelMessenger
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 778);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "MSG";
+            this.labelMessenger.AutoSize = true;
+            this.labelMessenger.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.labelMessenger.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMessenger.Location = new System.Drawing.Point(25, 778);
+            this.labelMessenger.Name = "labelMessenger";
+            this.labelMessenger.Size = new System.Drawing.Size(31, 13);
+            this.labelMessenger.TabIndex = 10;
+            this.labelMessenger.Text = "MSG";
             // 
             // progressBar2
             // 
@@ -1315,6 +1318,7 @@
             this.toolTip1.SetToolTip(this.buttonStorage, "This will give names of all the xml files in the master Device");
             this.buttonStorage.UseCompatibleTextRendering = true;
             this.buttonStorage.UseVisualStyleBackColor = true;
+            this.buttonStorage.Click += new System.EventHandler(this.buttonStorage_Click);
             // 
             // buttonRunning
             // 
@@ -1330,6 +1334,7 @@
             this.toolTip1.SetToolTip(this.buttonRunning, "This will provide currently running  XML on the master");
             this.buttonRunning.UseCompatibleTextRendering = true;
             this.buttonRunning.UseVisualStyleBackColor = true;
+            this.buttonRunning.Click += new System.EventHandler(this.buttonRunning_Click);
             // 
             // buttonXmlStore
             // 
@@ -1844,7 +1849,7 @@
         private System.Windows.Forms.ToolStripMenuItem commonProblemsToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBoxXmlEditor;
         private System.Windows.Forms.Button buttonXmlStore;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelMessenger;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonStorage;
