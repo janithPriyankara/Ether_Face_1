@@ -104,6 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties.Resources.Designer.cs.dll" />
+    <None Include="Resources\iconfinder_xml_40992.png" />
+    <None Include="Resources\pngtree-xml-file-document-icon-png-image_4187769.jpg" />
+    <None Include="Resources\iconfinder_Xml_file_database_extension_data_3876342.png" />
+    <None Include="Resources\pngtree-xml-file-document-icon-png-image_41877691.jpg" />
+    <None Include="Resources\Xml2.png" />
+    <None Include="Resources\iconfinder_xml_409921.png" />
+    <None Include="Resources\1754.10-xml-icon-iconbunny.jpg" />
     <Content Include="Slave.ico" />
     <None Include="SRC\XML\Xml.png" />
     <None Include="SRC\XML\text-xml.png" />

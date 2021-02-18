@@ -68,7 +68,7 @@
             this.customizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.communicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pORTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pORTcomboboxmenuitem = new System.Windows.Forms.ToolStripComboBox();
             this.windowToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gCodeToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.ladderToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,6 +81,10 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelNetwork = new System.Windows.Forms.Panel();
+            this.radioButtonOn = new System.Windows.Forms.RadioButton();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.radioButtonOff = new System.Windows.Forms.RadioButton();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.labelMSG = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,12 +92,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxminimize = new System.Windows.Forms.PictureBox();
             this.pictureBoxMaximize = new System.Windows.Forms.PictureBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelNetworkMonitor = new System.Windows.Forms.Label();
             this.toolStripSecondary = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonMotorDriver = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonIOCard = new System.Windows.Forms.ToolStripButton();
@@ -122,6 +126,7 @@
             this.writeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.noPortsToolStripMenuItem = new System.Windows.Forms.ToolStripComboBox();
             this.panelXml = new System.Windows.Forms.Panel();
             this.richTextBoxFileName = new System.Windows.Forms.RichTextBox();
             this.buttonDelete = new System.Windows.Forms.Button();
@@ -152,6 +157,8 @@
             this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commonProblemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -159,18 +166,19 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.labelActiveFileName = new System.Windows.Forms.Label();
             this.richTextBoxXmlEditor = new System.Windows.Forms.RichTextBox();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panelNetwork.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxminimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximize)).BeginInit();
@@ -179,18 +187,20 @@
             this.toolStripSecondary.SuspendLayout();
             this.toolStripPrimary.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.panelXml.SuspendLayout();
             this.menuStrip4.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -209,7 +219,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1618, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1754, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -498,18 +508,19 @@
             // communicationToolStripMenuItem
             // 
             this.communicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pORTToolStripMenuItem});
+            this.pORTcomboboxmenuitem});
             this.communicationToolStripMenuItem.Name = "communicationToolStripMenuItem";
             this.communicationToolStripMenuItem.Size = new System.Drawing.Size(106, 26);
             this.communicationToolStripMenuItem.Text = "Communication";
             this.communicationToolStripMenuItem.Click += new System.EventHandler(this.communicationToolStripMenuItem_Click);
             // 
-            // pORTToolStripMenuItem
+            // pORTcomboboxmenuitem
             // 
-            this.pORTToolStripMenuItem.Name = "pORTToolStripMenuItem";
-            this.pORTToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
-            this.pORTToolStripMenuItem.Text = "PORT";
-            this.pORTToolStripMenuItem.Click += new System.EventHandler(this.pORTToolStripMenuItem_Click);
+            this.pORTcomboboxmenuitem.Name = "pORTcomboboxmenuitem";
+            this.pORTcomboboxmenuitem.Size = new System.Drawing.Size(152, 23);
+            this.pORTcomboboxmenuitem.Text = "PORT";
+            this.pORTcomboboxmenuitem.SelectedIndexChanged += new System.EventHandler(this.pORTComboBox_selectedIndexChanged);
+            this.pORTcomboboxmenuitem.Click += new System.EventHandler(this.pORTToolStripMenuItem_Click);
             // 
             // windowToolStripMenuItem1
             // 
@@ -610,6 +621,10 @@
             this.panelNetwork.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelNetwork.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panelNetwork.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelNetwork.Controls.Add(this.radioButtonOn);
+            this.panelNetwork.Controls.Add(this.pictureBox12);
+            this.panelNetwork.Controls.Add(this.radioButtonOff);
+            this.panelNetwork.Controls.Add(this.pictureBox11);
             this.panelNetwork.Controls.Add(this.progressBar1);
             this.panelNetwork.Controls.Add(this.labelMSG);
             this.panelNetwork.Controls.Add(this.label3);
@@ -625,6 +640,58 @@
             this.panelNetwork.Size = new System.Drawing.Size(829, 804);
             this.panelNetwork.TabIndex = 2;
             this.panelNetwork.Paint += new System.Windows.Forms.PaintEventHandler(this.panelNetwork_Paint);
+            // 
+            // radioButtonOn
+            // 
+            this.radioButtonOn.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radioButtonOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonOn.Location = new System.Drawing.Point(12, 90);
+            this.radioButtonOn.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonOn.Name = "radioButtonOn";
+            this.radioButtonOn.Padding = new System.Windows.Forms.Padding(3);
+            this.radioButtonOn.Size = new System.Drawing.Size(50, 24);
+            this.radioButtonOn.TabIndex = 13;
+            this.radioButtonOn.TabStop = true;
+            this.radioButtonOn.Text = "ON";
+            this.toolTip1.SetToolTip(this.radioButtonOn, "Turn On/Off ");
+            this.radioButtonOn.UseVisualStyleBackColor = false;
+            this.radioButtonOn.Click += new System.EventHandler(this.radioButton_click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox12.Location = new System.Drawing.Point(9, 87);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(56, 30);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 14;
+            this.pictureBox12.TabStop = false;
+            // 
+            // radioButtonOff
+            // 
+            this.radioButtonOff.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.radioButtonOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonOff.Location = new System.Drawing.Point(12, 52);
+            this.radioButtonOff.Margin = new System.Windows.Forms.Padding(5);
+            this.radioButtonOff.Name = "radioButtonOff";
+            this.radioButtonOff.Padding = new System.Windows.Forms.Padding(3);
+            this.radioButtonOff.Size = new System.Drawing.Size(50, 24);
+            this.radioButtonOff.TabIndex = 11;
+            this.radioButtonOff.TabStop = true;
+            this.radioButtonOff.Text = "Off";
+            this.toolTip1.SetToolTip(this.radioButtonOff, "Turn On/Off ");
+            this.radioButtonOff.UseVisualStyleBackColor = false;
+            this.radioButtonOff.Click += new System.EventHandler(this.radioButtonOff_clicked);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox11.Location = new System.Drawing.Point(9, 49);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(56, 30);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 12;
+            this.pictureBox11.TabStop = false;
             // 
             // progressBar1
             // 
@@ -685,12 +752,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBoxminimize);
             this.groupBox1.Controls.Add(this.pictureBoxMaximize);
             this.groupBox1.Controls.Add(this.pictureBoxClose);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.labelNetworkMonitor);
             this.groupBox1.Location = new System.Drawing.Point(-2, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(823, 35);
@@ -698,6 +765,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " ";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("SOLIDWORKS GDT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(66, 12);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(233, 17);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Network Monitor - EtherFACE";
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
             // 
             // label1
             // 
@@ -749,18 +828,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
-            // labelNetworkMonitor
-            // 
-            this.labelNetworkMonitor.AutoSize = true;
-            this.labelNetworkMonitor.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNetworkMonitor.Location = new System.Drawing.Point(66, 7);
-            this.labelNetworkMonitor.Margin = new System.Windows.Forms.Padding(0);
-            this.labelNetworkMonitor.Name = "labelNetworkMonitor";
-            this.labelNetworkMonitor.Size = new System.Drawing.Size(297, 27);
-            this.labelNetworkMonitor.TabIndex = 0;
-            this.labelNetworkMonitor.Text = "Network Monitor - EtherFACE";
-            this.labelNetworkMonitor.Click += new System.EventHandler(this.label1_Click_2);
-            // 
             // toolStripSecondary
             // 
             this.toolStripSecondary.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -781,7 +848,7 @@
             this.toolStripButtonDigitalOutput,
             this.toolStripButtonDigitalInput});
             this.toolStripSecondary.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStripSecondary.Location = new System.Drawing.Point(772, 110);
+            this.toolStripSecondary.Location = new System.Drawing.Point(764, 185);
             this.toolStripSecondary.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripSecondary.Name = "toolStripSecondary";
             this.toolStripSecondary.Padding = new System.Windows.Forms.Padding(0);
@@ -927,7 +994,7 @@
             this.toolStripButtonPaste,
             this.toolStripButtonDelete});
             this.toolStripPrimary.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStripPrimary.Location = new System.Drawing.Point(3, 110);
+            this.toolStripPrimary.Location = new System.Drawing.Point(3, 173);
             this.toolStripPrimary.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripPrimary.Name = "toolStripPrimary";
             this.toolStripPrimary.Padding = new System.Windows.Forms.Padding(0);
@@ -1070,7 +1137,7 @@
             this.drawToolStripMenuItem,
             this.compileToolStripMenuItem,
             this.writeToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(84, 49);
+            this.menuStrip2.Location = new System.Drawing.Point(98, 48);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(272, 28);
             this.menuStrip2.TabIndex = 2;
@@ -1113,8 +1180,17 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.noPortsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(213, 31);
+            // 
+            // noPortsToolStripMenuItem
+            // 
+            this.noPortsToolStripMenuItem.Name = "noPortsToolStripMenuItem";
+            this.noPortsToolStripMenuItem.Size = new System.Drawing.Size(152, 23);
+            this.noPortsToolStripMenuItem.Text = "No Ports";
+            this.noPortsToolStripMenuItem.Click += new System.EventHandler(this.noPortsToolStripMenuItem_Click_1);
             // 
             // panelXml
             // 
@@ -1282,6 +1358,7 @@
             // 
             // menuStrip4
             // 
+            this.menuStrip4.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.menuStrip4.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newFileToolStripMenuItem,
@@ -1412,6 +1489,8 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.groupBox2.Controls.Add(this.pictureBox5);
+            this.groupBox2.Controls.Add(this.pictureBox9);
             this.groupBox2.Controls.Add(this.pictureBox6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.pictureBox7);
@@ -1419,14 +1498,33 @@
             this.groupBox2.Controls.Add(this.pictureBox8);
             this.groupBox2.Controls.Add(this.pictureBox3);
             this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Controls.Add(this.pictureBox5);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Location = new System.Drawing.Point(3, 1);
+            this.groupBox2.Location = new System.Drawing.Point(2, 1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(660, 35);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " ";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::EtherFACE1.Properties.Resources.pngtree_xml_file_document_icon_png_image_41877691;
+            this.pictureBox5.Location = new System.Drawing.Point(2, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(35, 34);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.pictureBox9.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(44, 35);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 6;
+            this.pictureBox9.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -1442,9 +1540,9 @@
             // 
             this.label5.BackColor = System.Drawing.Color.LimeGreen;
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label5.Location = new System.Drawing.Point(62, -2);
+            this.label5.Location = new System.Drawing.Point(41, -2);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(764, 10);
+            this.label5.Size = new System.Drawing.Size(617, 10);
             this.label5.TabIndex = 3;
             // 
             // pictureBox7
@@ -1497,22 +1595,14 @@
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(66, 7);
+            this.label6.Font = new System.Drawing.Font("SOLIDWORKS GDT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(57, 13);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(152, 27);
+            this.label6.Size = new System.Drawing.Size(116, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "XML Interface";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -1521,28 +1611,29 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.LightBlue;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.pictureBox9);
+            this.panel3.Controls.Add(this.pictureBox10);
             this.panel3.Controls.Add(this.labelActiveFileName);
-            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.richTextBoxXmlEditor);
             this.panel3.Location = new System.Drawing.Point(23, 87);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(617, 550);
+            this.panel3.Size = new System.Drawing.Size(618, 550);
             this.panel3.TabIndex = 0;
             // 
-            // pictureBox9
+            // pictureBox10
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(49, 97);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
+            this.pictureBox10.Image = global::EtherFACE1.Properties.Resources._1754_10_xml_icon_iconbunny;
+            this.pictureBox10.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 9;
+            this.pictureBox10.TabStop = false;
             // 
             // labelActiveFileName
             // 
             this.labelActiveFileName.AutoSize = true;
             this.labelActiveFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActiveFileName.Location = new System.Drawing.Point(46, 5);
+            this.labelActiveFileName.Location = new System.Drawing.Point(43, 9);
             this.labelActiveFileName.Name = "labelActiveFileName";
             this.labelActiveFileName.Size = new System.Drawing.Size(75, 16);
             this.labelActiveFileName.TabIndex = 1;
@@ -1552,9 +1643,10 @@
             // richTextBoxXmlEditor
             // 
             this.richTextBoxXmlEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxXmlEditor.ForeColor = System.Drawing.Color.DarkBlue;
-            this.richTextBoxXmlEditor.Location = new System.Drawing.Point(3, 24);
+            this.richTextBoxXmlEditor.ForeColor = System.Drawing.Color.MediumBlue;
+            this.richTextBoxXmlEditor.Location = new System.Drawing.Point(3, 30);
             this.richTextBoxXmlEditor.Name = "richTextBoxXmlEditor";
+            this.richTextBoxXmlEditor.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.richTextBoxXmlEditor.Size = new System.Drawing.Size(607, 501);
             this.richTextBoxXmlEditor.TabIndex = 0;
             this.richTextBoxXmlEditor.Text = "";
@@ -1572,21 +1664,17 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // button1
+            // timer1
             // 
-            this.button1.Location = new System.Drawing.Point(207, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer_tick);
             // 
             // cformEtherFace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1618, 873);
+            this.ClientSize = new System.Drawing.Size(1754, 873);
             this.Controls.Add(this.panelXml);
             this.Controls.Add(this.panelNetwork);
             this.Controls.Add(this.menuStrip1);
@@ -1598,6 +1686,8 @@
             this.menuStrip1.PerformLayout();
             this.panelNetwork.ResumeLayout(false);
             this.panelNetwork.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxminimize)).EndInit();
@@ -1610,22 +1700,24 @@
             this.toolStripPrimary.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panelXml.ResumeLayout(false);
             this.panelXml.PerformLayout();
             this.menuStrip4.ResumeLayout(false);
             this.menuStrip4.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1704,7 +1796,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonDigitalOutput;
         private System.Windows.Forms.ToolStripButton toolStripButtonDigitalInput;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelNetworkMonitor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.PictureBox pictureBoxMaximize;
@@ -1724,14 +1815,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem communicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pORTToolStripMenuItem;
         private System.Windows.Forms.Panel panelXml;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.MenuStrip menuStrip3;
@@ -1755,7 +1844,6 @@
         private System.Windows.Forms.ToolStripMenuItem commonProblemsToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBoxXmlEditor;
         private System.Windows.Forms.Button buttonXmlStore;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Label label7;
@@ -1771,7 +1859,17 @@
         private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
         private System.Windows.Forms.Label labelActiveFileName;
         private System.Windows.Forms.RichTextBox richTextBoxFileName;
+        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RadioButton radioButtonOff;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.RadioButton radioButtonOn;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.ToolStripComboBox pORTcomboboxmenuitem;
+        private System.Windows.Forms.ToolStripComboBox noPortsToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -63,6 +63,16 @@ namespace EtherFACE1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1754_10_xml_icon_iconbunny {
+            get {
+                object obj = ResourceManager.GetObject("1754.10-xml-icon-iconbunny", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _4764_png_860 {
             get {
                 object obj = ResourceManager.GetObject("4764.png_860", resourceCulture);
@@ -143,9 +153,39 @@ namespace EtherFACE1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_xml_40992 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_xml_40992", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_xml_409921 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_xml_409921", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_Xml_file_database_extension_data_3876342 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_Xml_file_database_extension_data_3876342", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_Xml_file_database_extension_data_38763421 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_Xml_file_database_extension_data_38763421", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +333,26 @@ namespace EtherFACE1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_xml_file_document_icon_png_image_4187769 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-xml-file-document-icon-png-image_4187769", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_xml_file_document_icon_png_image_41877691 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-xml-file-document-icon-png-image_41877691", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap read_icon {
             get {
                 object obj = ResourceManager.GetObject("read_icon", resourceCulture);
@@ -376,6 +436,16 @@ namespace EtherFACE1.Properties {
         internal static System.Drawing.Bitmap Time {
             get {
                 object obj = ResourceManager.GetObject("Time", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Xml2 {
+            get {
+                object obj = ResourceManager.GetObject("Xml2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
