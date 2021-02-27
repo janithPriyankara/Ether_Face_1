@@ -36,7 +36,7 @@ namespace EtherFACE1
 
         public Thread ReadSerialDataThread;
         public string readSerialValue;
-        public string readSerialBytes;
+        public byte[] readSerialBytes;
 
         public string xmlread;
 
@@ -365,8 +365,10 @@ namespace EtherFACE1
 
             byte[] bytes;
 
+
             byte preheader1 = 0xAA;
             byte preheader2 = 0xAB;
+
 
             var headersMainList = new Dictionary<string, byte>() { };
             var taskHeadersXML = new Dictionary<string, byte>() { };
@@ -446,14 +448,14 @@ namespace EtherFACE1
                         Frame[i] = bytes[i - 3];
                     }
                 }
-
                 return Frame;
-
-
             }
 
             // making new frame
         }
+
+
+        
 
         private void label9_Click_1(object sender, EventArgs e)
         {
@@ -481,6 +483,8 @@ namespace EtherFACE1
 
         }
 
+
+
         //Recieve thread operations
         private void readSerialData()
         {
@@ -495,23 +499,78 @@ namespace EtherFACE1
             }
         }
 
+
+
+        // Reading as Characters
+
+        /*
+                private void ReadSerial()
+                {
+                    while (port_considered.IsOpen)
+                    {
+                        if (port_considered.BytesToRead > 0)
+                        {
+                            readSerialValue = port_considered.ReadExisting();
+                            ShowSerialData(readSerialValue);
+                        }
+                    }
+                }
+ * 
+ * 
+ *       public delegate void ShowSerialDatadelegate(string r);
+ *
+ *
+ *
+            private void ShowSerialData(string s)
+            {
+            if (richTextBoxXmlEditor.InvokeRequired)
+            {
+                ShowSerialDatadelegate SSDD = ShowSerialData;
+                Invoke(SSDD, s);
+            }
+            else
+            {
+                richTextBoxReciever.AppendText(Environment.NewLine+s);
+                //MessageBox.Show(s);
+
+            }
+        }
+
+ * 
+ * 
+ *             */
+
+
+
+
+        // Reading byte-wise
+
+
+        public int bytestoreadValue;
+
         private void ReadSerial()
         {
             while (port_considered.IsOpen)
             {
-                if (port_considered.BytesToRead > 0)
+                bytestoreadValue = port_considered.BytesToRead;
+                readSerialBytes = new byte[bytestoreadValue];
+
+                if (bytestoreadValue > 0)
                 {
-                    readSerialValue = port_considered.ReadExisting();
-                    ShowSerialData(readSerialValue);
+
+
+                    port_considered .Read(readSerialBytes, 0, bytestoreadValue); //<--- YOU ARE READING (AND DISCARDING) DATA HERE
+
+                    ShowSerialData(readSerialBytes);
                 }
 
             }
         }
 
 
-        public delegate void ShowSerialDatadelegate(string r);
+        public delegate void ShowSerialDatadelegate(byte[] r);
 
-        private void ShowSerialData(string s)
+        private void ShowSerialData(byte[] s)
         {
             if (richTextBoxXmlEditor.InvokeRequired)
             {
@@ -520,11 +579,25 @@ namespace EtherFACE1
             }
             else
             {
-                //richTextBoxXmlEditor.AppendText(s);
+                foreach (var item in s) {
+                    richTextBoxReciever.AppendText(Environment.NewLine + item);
+
+                }
+//                richTextBoxReciever.AppendText(Environment.NewLine+s);
                 //MessageBox.Show(s);
 
             }
         }
+
+
+
+        public static void FrameDecoder() { }
+
+        public static void XMLOperation()
+        {
+
+        }
+
 
         private void noPortsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
@@ -628,29 +701,62 @@ namespace EtherFACE1
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
-            writeData(FramGenerator("xml", "read", richTextBoxFileName.Text, false));
-            labelMessenger.Text = "DONE READING";
+            if (richTextBoxFileName.TextLength!=10) {
+                MessageBox.Show("please ennter a Valid XML file Name !");
+
+            }
+            else {
+                writeData(FramGenerator("xml", "read", richTextBoxFileName.Text, false));
+                labelMessenger.Text = "DONE READING";
+            }
         }
+            
 
         private void buttonActivate_Click(object sender, EventArgs e)
         {
-            writeData(FramGenerator("xml", "activate", richTextBoxFileName.Text, false));
-            labelMessenger.Text = "DONE ACTIVATING";
+            if (richTextBoxFileName.TextLength != 10)
+            {
+                MessageBox.Show("please ennter a Valid XML file Name !");
+            }
+            else
+            {
+                writeData(FramGenerator("xml", "activate", richTextBoxFileName.Text, false));
+                labelMessenger.Text = "DONE ACTIVATING";
+            }
+
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            writeData(FramGenerator("xml", "delete", richTextBoxFileName.Text, false));
-            labelMessenger.Text = "DONE DELETING";
+            if (richTextBoxFileName.TextLength != 10)
+            {
+                MessageBox.Show("please ennter a Valid XML file Name !");
+            }
+            else
+            {
+                writeData(FramGenerator("xml", "delete", richTextBoxFileName.Text, false));
+                labelMessenger.Text = "DONE DELETING";
+            }
         }
 
         private void buttonXmlStore_Click(object sender, EventArgs e)
         {
-            writeData(FramGenerator("xml", "store", richTextBoxFileName.Text + xmlread, true));
-            labelMessenger.Text = "DONE STORING";
+            if (richTextBoxFileName.TextLength != 10)
+            {
+                MessageBox.Show("please ennter a Valid XML file Name !");
+            }
+            else
+            {
+                writeData(FramGenerator("xml", "store", richTextBoxFileName.Text + richTextBoxXmlEditor.Text, true));
+                labelMessenger.Text = "DONE STORING";
+
+            }
         }
 
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
 
+        }
     }
 }
 

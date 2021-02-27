@@ -167,14 +167,21 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.labelActiveFileName = new System.Windows.Forms.Label();
-            this.richTextBoxXmlEditor = new System.Windows.Forms.RichTextBox();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.groupBoxFileName = new System.Windows.Forms.GroupBox();
+            this.tabControlEditor = new System.Windows.Forms.TabControl();
+            this.tabPageEditor = new System.Windows.Forms.TabPage();
+            this.tabPageReciever = new System.Windows.Forms.TabPage();
+            this.labelActiveFileName = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.richTextBoxXmlEditor = new System.Windows.Forms.RichTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.richTextBoxReciever = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.panelNetwork.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -199,8 +206,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.groupBoxFileName.SuspendLayout();
+            this.tabControlEditor.SuspendLayout();
+            this.tabPageEditor.SuspendLayout();
+            this.tabPageReciever.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -219,7 +231,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1754, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1538, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -1195,8 +1207,9 @@
             // panelXml
             // 
             this.panelXml.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.panelXml.Controls.Add(this.richTextBoxFileName);
+            this.panelXml.Controls.Add(this.tabControlEditor);
             this.panelXml.Controls.Add(this.buttonDelete);
+            this.panelXml.Controls.Add(this.groupBoxFileName);
             this.panelXml.Controls.Add(this.buttonActivate);
             this.panelXml.Controls.Add(this.buttonRead);
             this.panelXml.Controls.Add(this.labelMessenger);
@@ -1208,7 +1221,6 @@
             this.panelXml.Controls.Add(this.label4);
             this.panelXml.Controls.Add(this.menuStrip4);
             this.panelXml.Controls.Add(this.groupBox2);
-            this.panelXml.Controls.Add(this.panel3);
             this.panelXml.Controls.Add(this.menuStrip3);
             this.panelXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelXml.Location = new System.Drawing.Point(866, 39);
@@ -1221,9 +1233,9 @@
             // 
             this.richTextBoxFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxFileName.ForeColor = System.Drawing.Color.Blue;
-            this.richTextBoxFileName.Location = new System.Drawing.Point(170, 676);
+            this.richTextBoxFileName.Location = new System.Drawing.Point(3, 24);
             this.richTextBoxFileName.Name = "richTextBoxFileName";
-            this.richTextBoxFileName.Size = new System.Drawing.Size(354, 39);
+            this.richTextBoxFileName.Size = new System.Drawing.Size(332, 39);
             this.richTextBoxFileName.TabIndex = 2;
             this.richTextBoxFileName.Text = "";
             // 
@@ -1232,7 +1244,7 @@
             this.buttonDelete.AutoEllipsis = true;
             this.buttonDelete.BackColor = System.Drawing.Color.LightCyan;
             this.buttonDelete.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Location = new System.Drawing.Point(532, 715);
+            this.buttonDelete.Location = new System.Drawing.Point(532, 731);
             this.buttonDelete.Margin = new System.Windows.Forms.Padding(5);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(72, 29);
@@ -1248,7 +1260,7 @@
             this.buttonActivate.AutoEllipsis = true;
             this.buttonActivate.BackColor = System.Drawing.Color.LightCyan;
             this.buttonActivate.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonActivate.Location = new System.Drawing.Point(532, 680);
+            this.buttonActivate.Location = new System.Drawing.Point(532, 701);
             this.buttonActivate.Margin = new System.Windows.Forms.Padding(5);
             this.buttonActivate.Name = "buttonActivate";
             this.buttonActivate.Size = new System.Drawing.Size(72, 29);
@@ -1264,7 +1276,7 @@
             this.buttonRead.AutoEllipsis = true;
             this.buttonRead.BackColor = System.Drawing.Color.LightCyan;
             this.buttonRead.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRead.Location = new System.Drawing.Point(532, 645);
+            this.buttonRead.Location = new System.Drawing.Point(532, 671);
             this.buttonRead.Margin = new System.Windows.Forms.Padding(5);
             this.buttonRead.Name = "buttonRead";
             this.buttonRead.Size = new System.Drawing.Size(72, 29);
@@ -1309,7 +1321,7 @@
             this.buttonStorage.AutoEllipsis = true;
             this.buttonStorage.BackColor = System.Drawing.Color.LightCyan;
             this.buttonStorage.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStorage.Location = new System.Drawing.Point(43, 715);
+            this.buttonStorage.Location = new System.Drawing.Point(43, 731);
             this.buttonStorage.Margin = new System.Windows.Forms.Padding(5);
             this.buttonStorage.Name = "buttonStorage";
             this.buttonStorage.Size = new System.Drawing.Size(72, 29);
@@ -1325,7 +1337,7 @@
             this.buttonRunning.AutoEllipsis = true;
             this.buttonRunning.BackColor = System.Drawing.Color.LightCyan;
             this.buttonRunning.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRunning.Location = new System.Drawing.Point(43, 680);
+            this.buttonRunning.Location = new System.Drawing.Point(43, 701);
             this.buttonRunning.Margin = new System.Windows.Forms.Padding(5);
             this.buttonRunning.Name = "buttonRunning";
             this.buttonRunning.Size = new System.Drawing.Size(72, 29);
@@ -1341,7 +1353,7 @@
             this.buttonXmlStore.AutoEllipsis = true;
             this.buttonXmlStore.BackColor = System.Drawing.Color.LightCyan;
             this.buttonXmlStore.Font = new System.Drawing.Font("Futura Bk BT", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonXmlStore.Location = new System.Drawing.Point(43, 645);
+            this.buttonXmlStore.Location = new System.Drawing.Point(43, 671);
             this.buttonXmlStore.Margin = new System.Windows.Forms.Padding(5);
             this.buttonXmlStore.Name = "buttonXmlStore";
             this.buttonXmlStore.Size = new System.Drawing.Size(72, 29);
@@ -1363,7 +1375,7 @@
             // 
             // menuStrip4
             // 
-            this.menuStrip4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.menuStrip4.BackColor = System.Drawing.SystemColors.Menu;
             this.menuStrip4.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newFileToolStripMenuItem,
@@ -1391,28 +1403,28 @@
             // newXMLToolStripMenuItem1
             // 
             this.newXMLToolStripMenuItem1.Name = "newXMLToolStripMenuItem1";
-            this.newXMLToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.newXMLToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.newXMLToolStripMenuItem1.Text = "New XML";
             this.newXMLToolStripMenuItem1.Click += new System.EventHandler(this.newXMLToolStripMenuItem1_Click);
             // 
             // openXMLToolStripMenuItem
             // 
             this.openXMLToolStripMenuItem.Name = "openXMLToolStripMenuItem";
-            this.openXMLToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.openXMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openXMLToolStripMenuItem.Text = "Open XML";
             this.openXMLToolStripMenuItem.Click += new System.EventHandler(this.openXMLToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem1
             // 
             this.saveToolStripMenuItem1.Name = "saveToolStripMenuItem1";
-            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.saveToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem1.Text = "Save";
             this.saveToolStripMenuItem1.Click += new System.EventHandler(this.saveToolStripMenuItem1_Click);
             // 
             // saveAsToolStripMenuItem1
             // 
             this.saveAsToolStripMenuItem1.Name = "saveAsToolStripMenuItem1";
-            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.saveAsToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem1.Text = "Save As";
             // 
             // viewToolStripMenuItem
@@ -1461,13 +1473,13 @@
             // readLogToolStripMenuItem
             // 
             this.readLogToolStripMenuItem.Name = "readLogToolStripMenuItem";
-            this.readLogToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.readLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.readLogToolStripMenuItem.Text = "Read Log";
             // 
             // writeLogToolStripMenuItem
             // 
             this.writeLogToolStripMenuItem.Name = "writeLogToolStripMenuItem";
-            this.writeLogToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.writeLogToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.writeLogToolStripMenuItem.Text = "Write Log";
             // 
             // helpToolStripMenuItem1
@@ -1612,50 +1624,6 @@
             this.label6.Text = "XML Interface";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightBlue;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.pictureBox10);
-            this.panel3.Controls.Add(this.labelActiveFileName);
-            this.panel3.Controls.Add(this.richTextBoxXmlEditor);
-            this.panel3.Location = new System.Drawing.Point(23, 87);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(618, 550);
-            this.panel3.TabIndex = 0;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::EtherFACE1.Properties.Resources._1754_10_xml_icon_iconbunny;
-            this.pictureBox10.Location = new System.Drawing.Point(4, 0);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 9;
-            this.pictureBox10.TabStop = false;
-            // 
-            // labelActiveFileName
-            // 
-            this.labelActiveFileName.AutoSize = true;
-            this.labelActiveFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelActiveFileName.Location = new System.Drawing.Point(43, 9);
-            this.labelActiveFileName.Name = "labelActiveFileName";
-            this.labelActiveFileName.Size = new System.Drawing.Size(75, 16);
-            this.labelActiveFileName.TabIndex = 1;
-            this.labelActiveFileName.Text = "new file.xml";
-            this.labelActiveFileName.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // richTextBoxXmlEditor
-            // 
-            this.richTextBoxXmlEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxXmlEditor.ForeColor = System.Drawing.Color.MediumBlue;
-            this.richTextBoxXmlEditor.Location = new System.Drawing.Point(3, 30);
-            this.richTextBoxXmlEditor.Name = "richTextBoxXmlEditor";
-            this.richTextBoxXmlEditor.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBoxXmlEditor.Size = new System.Drawing.Size(607, 501);
-            this.richTextBoxXmlEditor.TabIndex = 0;
-            this.richTextBoxXmlEditor.Text = "";
-            // 
             // menuStrip3
             // 
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
@@ -1674,12 +1642,124 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer_tick);
             // 
+            // groupBoxFileName
+            // 
+            this.groupBoxFileName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBoxFileName.Controls.Add(this.richTextBoxFileName);
+            this.groupBoxFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxFileName.Location = new System.Drawing.Point(154, 684);
+            this.groupBoxFileName.Name = "groupBoxFileName";
+            this.groupBoxFileName.Size = new System.Drawing.Size(338, 64);
+            this.groupBoxFileName.TabIndex = 19;
+            this.groupBoxFileName.TabStop = false;
+            this.groupBoxFileName.Text = "File Name";
+            this.groupBoxFileName.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // tabControlEditor
+            // 
+            this.tabControlEditor.Controls.Add(this.tabPageEditor);
+            this.tabControlEditor.Controls.Add(this.tabPageReciever);
+            this.tabControlEditor.Location = new System.Drawing.Point(24, 90);
+            this.tabControlEditor.Name = "tabControlEditor";
+            this.tabControlEditor.SelectedIndex = 0;
+            this.tabControlEditor.Size = new System.Drawing.Size(633, 571);
+            this.tabControlEditor.TabIndex = 10;
+            // 
+            // tabPageEditor
+            // 
+            this.tabPageEditor.BackColor = System.Drawing.Color.LightBlue;
+            this.tabPageEditor.Controls.Add(this.panel3);
+            this.tabPageEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageEditor.Location = new System.Drawing.Point(4, 25);
+            this.tabPageEditor.Name = "tabPageEditor";
+            this.tabPageEditor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageEditor.Size = new System.Drawing.Size(625, 542);
+            this.tabPageEditor.TabIndex = 0;
+            this.tabPageEditor.Text = "Editor";
+            // 
+            // tabPageReciever
+            // 
+            this.tabPageReciever.BackColor = System.Drawing.Color.LightBlue;
+            this.tabPageReciever.Controls.Add(this.panel2);
+            this.tabPageReciever.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageReciever.Location = new System.Drawing.Point(4, 25);
+            this.tabPageReciever.Name = "tabPageReciever";
+            this.tabPageReciever.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageReciever.Size = new System.Drawing.Size(625, 542);
+            this.tabPageReciever.TabIndex = 1;
+            this.tabPageReciever.Text = "Reciever";
+            // 
+            // labelActiveFileName
+            // 
+            this.labelActiveFileName.AutoSize = true;
+            this.labelActiveFileName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActiveFileName.Location = new System.Drawing.Point(43, 9);
+            this.labelActiveFileName.Name = "labelActiveFileName";
+            this.labelActiveFileName.Size = new System.Drawing.Size(75, 16);
+            this.labelActiveFileName.TabIndex = 1;
+            this.labelActiveFileName.Text = "new file.xml";
+            this.labelActiveFileName.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::EtherFACE1.Properties.Resources._1754_10_xml_icon_iconbunny;
+            this.pictureBox10.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 9;
+            this.pictureBox10.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightBlue;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.pictureBox10);
+            this.panel3.Controls.Add(this.labelActiveFileName);
+            this.panel3.Controls.Add(this.richTextBoxXmlEditor);
+            this.panel3.Location = new System.Drawing.Point(3, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(618, 533);
+            this.panel3.TabIndex = 0;
+            // 
+            // richTextBoxXmlEditor
+            // 
+            this.richTextBoxXmlEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxXmlEditor.ForeColor = System.Drawing.Color.MediumBlue;
+            this.richTextBoxXmlEditor.Location = new System.Drawing.Point(3, 30);
+            this.richTextBoxXmlEditor.Name = "richTextBoxXmlEditor";
+            this.richTextBoxXmlEditor.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBoxXmlEditor.Size = new System.Drawing.Size(607, 501);
+            this.richTextBoxXmlEditor.TabIndex = 0;
+            this.richTextBoxXmlEditor.Text = "";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightBlue;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.richTextBoxReciever);
+            this.panel2.Location = new System.Drawing.Point(3, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(618, 533);
+            this.panel2.TabIndex = 1;
+            // 
+            // richTextBoxReciever
+            // 
+            this.richTextBoxReciever.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxReciever.ForeColor = System.Drawing.Color.MediumBlue;
+            this.richTextBoxReciever.Location = new System.Drawing.Point(3, 30);
+            this.richTextBoxReciever.Name = "richTextBoxReciever";
+            this.richTextBoxReciever.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBoxReciever.Size = new System.Drawing.Size(607, 501);
+            this.richTextBoxReciever.TabIndex = 0;
+            this.richTextBoxReciever.Text = "";
+            // 
             // cformEtherFace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(1754, 873);
+            this.ClientSize = new System.Drawing.Size(1538, 850);
             this.Controls.Add(this.panelXml);
             this.Controls.Add(this.panelNetwork);
             this.Controls.Add(this.menuStrip1);
@@ -1720,9 +1800,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBoxFileName.ResumeLayout(false);
+            this.tabControlEditor.ResumeLayout(false);
+            this.tabPageEditor.ResumeLayout(false);
+            this.tabPageReciever.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1827,7 +1912,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MenuStrip menuStrip4;
@@ -1847,7 +1931,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commonProblemsToolStripMenuItem;
-        private System.Windows.Forms.RichTextBox richTextBoxXmlEditor;
         private System.Windows.Forms.Button buttonXmlStore;
         private System.Windows.Forms.Label labelMessenger;
         private System.Windows.Forms.ProgressBar progressBar2;
@@ -1862,11 +1945,9 @@
         private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
-        private System.Windows.Forms.Label labelActiveFileName;
         private System.Windows.Forms.RichTextBox richTextBoxFileName;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton radioButtonOff;
         private System.Windows.Forms.PictureBox pictureBox11;
@@ -1875,6 +1956,17 @@
         private System.Windows.Forms.ToolStripComboBox pORTcomboboxmenuitem;
         private System.Windows.Forms.ToolStripComboBox noPortsToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.GroupBox groupBoxFileName;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TabControl tabControlEditor;
+        private System.Windows.Forms.TabPage tabPageEditor;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label labelActiveFileName;
+        private System.Windows.Forms.RichTextBox richTextBoxXmlEditor;
+        private System.Windows.Forms.TabPage tabPageReciever;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RichTextBox richTextBoxReciever;
     }
 }
 
