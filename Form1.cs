@@ -13,8 +13,8 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 
 //Serial Port
-using System.IO.Ports;
 using System.Threading;
+using System.IO.Ports;
 
 
 //XML
@@ -26,8 +26,6 @@ using System.IO;
 using System.Timers;
 
 using System.Security;
-
-
 
 namespace EtherFACE1
 {
@@ -48,7 +46,7 @@ namespace EtherFACE1
         private byte[] Data = new byte[5];
         private string rx_data = String.Empty;
         private string port_name = String.Empty;
-        private int baud_rate = 0;
+        private int baud_rate = 4800;
 
         public string sentHistory = "";
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -193,12 +191,12 @@ namespace EtherFACE1
 
         }
 
+        //XML file operations
+        #region
         private void newXMLToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             richTextBoxXmlEditor.Text = null;
             labelActiveFileName.Text = "newFile.XMl";
-
-
         }
 
         private void openXMLToolStripMenuItem_Click(object sender, EventArgs e)
@@ -230,21 +228,7 @@ namespace EtherFACE1
                     MessageBox.Show(String.Format("File opening Fail ! \r\n\nLocation : {0} \r\n\n", fileName.ToString()));
 
                 }
-
-
-
             }
-        }
-
-
-        private void panelXml_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void saveToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -262,6 +246,18 @@ namespace EtherFACE1
 
                 }
             }
+        }
+        #endregion   
+
+
+        private void panelXml_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
 
 
@@ -307,12 +303,16 @@ namespace EtherFACE1
                 }
             }
         }
-    
 
 
 
+        //Port Selection  And Configureration
+        #region
 
-     
+        public void LoadSequence()
+        {
+            pORTcomboboxmenuitem.Items.Clear();
+        }
 
         private void communicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -320,6 +320,8 @@ namespace EtherFACE1
             LoadSequence();
 
             int no_of_available_ports = 0;
+
+         
 
             //getting avialble ports
             no_of_available_ports = SerialPort.GetPortNames().Length;
@@ -336,22 +338,90 @@ namespace EtherFACE1
                     pORTcomboboxmenuitem.Items.Add(item);
                 }
             }
-        }
+        } //Load port list
 
-
-        
-
-
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void pORTComboBox_selectedIndexChanged(object sender, EventArgs e) //make selected port
         {
+            // making new port using selected port and baudRate
+            port_name = pORTcomboboxmenuitem.SelectedItem.ToString();
+            //baud_rate = Convert.ToInt32(baud_rate);
+
+            port_considered = new SerialPort(port_name, baud_rate);
+
+            port_considered.ReadBufferSize = 8192;
+            port_considered.WriteBufferSize = 8192;
 
         }
 
-
-        private void pictureBox9_Click_1(object sender, EventArgs e)
+        private void radioButtonOn_click(object sender, EventArgs e) // turning On the selected Port
         {
+            if (port_considered == null)
+            {
+                MessageBox.Show("Please Follow the correct Guide-Line !");
+            }
+            else
+            {
+                try
+                {
+                    if (port_considered.IsOpen == false)
+                    {
+                        port_considered.Open();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                if (port_considered.IsOpen)
+                {
+                    readSerialData();
+                }
+                timer1.Enabled = true;
+                timer1.Interval = 1000;
+                timer1.Start();
+            }
+        }
+
+        private void radioButtonOff_clicked(object sender, EventArgs e) // turning off the Selected Port
+        {
+            if (port_considered != null)
+            {
+                if (port_considered.IsOpen)
+                {
+                    port_considered.Close();
+                    pORTcomboboxmenuitem.Items.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No port in Action !");
+                }
+                pORTcomboboxmenuitem.SelectedText = "";
+                pORTcomboboxmenuitem.Items.Clear();
+            }
+
+            timer1.Enabled = false;
+
+            this.radioButtonOn.BackColor = Color.SkyBlue;
 
         }
+
+        private void timer_tick(object sender, EventArgs e)
+        {
+            if (timer1State)
+            {
+
+                this.radioButtonOn.BackColor = Color.LimeGreen;
+            }
+            else
+            {
+                this.radioButtonOn.BackColor = Color.SkyBlue;
+            }
+
+            timer1State = !timer1State;
+        } // Background Timer for 
+
+        #endregion
 
 
 
@@ -469,9 +539,6 @@ namespace EtherFACE1
 
 
 
-        public void LoadSequence() {
-            pORTcomboboxmenuitem.Items.Clear();
-        }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
@@ -502,6 +569,7 @@ namespace EtherFACE1
 
 
         // Reading as Characters
+        #region
 
         /*
                 private void ReadSerial()
@@ -539,7 +607,7 @@ namespace EtherFACE1
  * 
  * 
  *             */
-
+        #endregion
 
 
 
@@ -548,7 +616,7 @@ namespace EtherFACE1
 
         public int bytestoreadValue;
 
-        private void ReadSerial()
+        private void ReadSerial() //Serial Reading
         {
             while (port_considered.IsOpen)
             {
@@ -557,9 +625,7 @@ namespace EtherFACE1
 
                 if (bytestoreadValue > 0)
                 {
-
-
-                    port_considered .Read(readSerialBytes, 0, bytestoreadValue); //<--- YOU ARE READING (AND DISCARDING) DATA HERE
+                    port_considered .Read(readSerialBytes, 0, bytestoreadValue);  
 
                     ShowSerialData(readSerialBytes);
                 }
@@ -568,6 +634,7 @@ namespace EtherFACE1
         }
 
 
+        // Read event generation
         public delegate void ShowSerialDatadelegate(byte[] r);
 
         private void ShowSerialData(byte[] s)
@@ -579,110 +646,119 @@ namespace EtherFACE1
             }
             else
             {
-                foreach (var item in s) {
-                    richTextBoxReciever.AppendText(Environment.NewLine + item);
+                FrameDecoder(s.ToList());
 
-                }
-//                richTextBoxReciever.AppendText(Environment.NewLine+s);
-                //MessageBox.Show(s);
+            //                foreach (var item in s) {
+            //                  richTextBoxReciever.AppendText(Environment.NewLine + item);
+            //
+            //             }
 
             }
         }
 
 
 
-        public static void FrameDecoder() { }
+        public static void FrameDecoder(List<byte> InFrame) {
 
-        public static void XMLOperation()
-        {
+            int preHeader1Index;
+            int preHeader2Index;
+
+            byte header;//main categories
+            byte task;//task of selected category
+
+            var payload = new List<int>();
+
+            preHeader1Index = InFrame.IndexOf(0xAA);
+            preHeader2Index = InFrame.IndexOf(0xAB);
+
+            if ( (preHeader1Index >= -1) & (preHeader2Index >= -1) ) {
+
+
+                //Sending intger values of bytes because no need of bytes to process
+                for (int i = 3;i<InFrame.Count;i++) {
+                    payload[i-3] = InFrame[i];
+                }
+
+                header = Convert.ToByte(InFrame[preHeader2Index + 1] >> 4);
+                task = Convert.ToByte(header & 0x0F);
+
+                switch (header) {
+
+                    case 0x02: //Register read local memory space
+                        break;
+
+                    case 0x0A: //Register read user memory space
+                        break;
+
+                    case 0x03: //Read triggered time of digital input
+                        break;
+
+                    case 0x04: //Digital input read
+                        break;
+
+                    case 0x06: //Analog input read
+                        break;
+
+                    case 0x08: //I2C read
+                        XMLOperation(task,payload.ToArray());
+                        break;
+
+                    case 0x0C: //XML
+                        break;
+
+                    case 0x0E: //Control Commands
+                        break;
+
+                    case 0x0F: //Emergency
+                        break;
+
+
+                    default:  //Reserved
+                        break;
+
+
+                }
+            }
+
 
         }
 
-
-        private void noPortsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        public static void XMLOperation(byte task, int[] xmlData)
         {
-
-        }
-
-        private void pORTComboBox_selectedIndexChanged(object sender, EventArgs e)
-        {
-            // making new port using selected port and baudRate
-            port_name = pORTcomboboxmenuitem.SelectedItem.ToString();
-            baud_rate = Convert.ToInt32(4800);
-
-            port_considered = new SerialPort(port_name, baud_rate);
-
-        }
-
-        private void radioButton_click(object sender, EventArgs e)
-        {
-            if (port_considered == null)
+            switch (task)
             {
-                MessageBox.Show("Please Follow the correct Guide-Line !");
-            }
-            else
-            {
+                case 0x01:  //Read(send the requested XML file data)
+                    break;
 
-                try
-                {
-                    if (port_considered.IsOpen == false)
-                    {
-                        port_considered.Open();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+                case 0x02:  //Load(Send the name of the active XML file)
+                    break;
 
-                if (port_considered.IsOpen)
-                {
-                    readSerialData();
-                }
-                timer1.Enabled = true;
-                timer1.Interval = 1000;
-                timer1.Start();
+                case 0x04:  //Read Available XML names (send all XML file names in the master)
+                    break;
+
+                case 0x06:  //Delete success (delete this file success)  
+                    break;
+
+                case 0x0E:  //Delete unsuccess (delete this file unsuccess)
+                    break;
+
+                case 0x05:  //Set success (successfully set this file as the active XML)
+                    break;
+
+                case 0x0D:  //Set unsuccess (unsuccessfully set this file as the active XML)
+                    break;
+
+                default:    // Others
+                    break;
+                    
             }
         }
 
 
-        private void radioButtonOff_clicked(object sender, EventArgs e)
-        {
-            if (port_considered!= null) {
-                if (port_considered.IsOpen)
-                {
-                    port_considered.Close();
-                    pORTcomboboxmenuitem.Items.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("No port in Action !");
-                }
-                pORTcomboboxmenuitem.SelectedText = "";
-                pORTcomboboxmenuitem.Items.Clear();
-            }
-
-            timer1.Enabled = false;
-               
-            this.radioButtonOn.BackColor = Color.SkyBlue;
-
-        }
 
 
-        private void timer_tick(object sender, EventArgs e)
-        {
-            if (timer1State)
-            {
 
-                this.radioButtonOn.BackColor = Color.LimeGreen;
-            }
-            else
-            {
-                this.radioButtonOn.BackColor = Color.SkyBlue;
-            }
 
-            timer1State = !timer1State;
-        }
 
 
 
@@ -756,7 +832,10 @@ namespace EtherFACE1
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
+
+
         }
+
     }
 }
 
