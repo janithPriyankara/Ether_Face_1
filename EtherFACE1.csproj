@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties.Resources.Designer.cs.dll" />
+    <None Include="SRC\Tab manager\Key features.png" />
     <None Include="Resources\iconfinder_xml_40992.png" />
     <None Include="Resources\pngtree-xml-file-document-icon-png-image_4187769.jpg" />
     <None Include="Resources\iconfinder_Xml_file_database_extension_data_3876342.png" />

@@ -124,6 +124,9 @@
   <data name="Compile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\Compile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="image40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SRC\image40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dlt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\dlt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,9 +139,6 @@
   <data name="text-xml" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\XML\text-xml.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="maxmize" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SRC\maxmize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="iconfinder_Xml_file_database_extension_data_3876342" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\XML\iconfinder_Xml_file_database_extension_data_3876342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,11 +148,14 @@
   <data name="stepper-motor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\stepper-motor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-xml-file-document-icon-png-image_41877691" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-xml-file-document-icon-png-image_41877691.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="slave-icon-20_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SRC\slave-icon-20_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1754.10-xml-icon-iconbunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1754.10-xml-icon-iconbunny.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mail_write" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\mail_write.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,14 +169,14 @@
   <data name="master device" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\master device.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngtree-xml-file-document-icon-png-image_4187769" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngtree-xml-file-document-icon-png-image_4187769.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Industrial PC" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SRC\Industrial PC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="electric-cable-icon-png-favpng-JmeKQdZXWBqtmniq8a7BdJSUK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\electric-cable-icon-png-favpng-JmeKQdZXWBqtmniq8a7BdJSUK.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Industrial PC" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SRC\Industrial PC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-xml-file-document-icon-png-image_4187769" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-xml-file-document-icon-png-image_4187769.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Motor Driver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\Motor Driver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,14 +202,14 @@
   <data name="Time" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\Time.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slave-icon-20_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SRC\slave-icon-20_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="maxmize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SRC\maxmize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FJ8X2T9IEMNIE39" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\FJ8X2T9IEMNIE39.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image40" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\SRC\image40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pngtree-xml-file-document-icon-png-image_41877691" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-xml-file-document-icon-png-image_41877691.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="iconfinder_xml_409921" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconfinder_xml_409921.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,7 +235,7 @@
   <data name="read_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\SRC\read_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1754.10-xml-icon-iconbunny" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1754.10-xml-icon-iconbunny.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Key features" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\SRC\Tab manager\Key features.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

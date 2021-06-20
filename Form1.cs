@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
 //metroFrameWork
-using MetroFramework.Forms;
 
 //Serial Port
 using System.Threading;
@@ -18,14 +14,11 @@ using System.IO.Ports;
 
 
 //XML
-using System.Xml;
 using System.IO;
 
 
 //network
-using System.Timers;
 
-using System.Security;
 
 namespace EtherFACE1
 {
@@ -60,11 +53,11 @@ namespace EtherFACE1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void cformEtherFace_Load(object sender, EventArgs e)
         {
-
-
+            tabClose();
         }
+
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -150,6 +143,7 @@ namespace EtherFACE1
         {
 
         }
+
 
         //visibility of Network Port
         private void networkToolStripMenuItem_Click(object sender, EventArgs e)
@@ -250,10 +244,7 @@ namespace EtherFACE1
         #endregion   
 
 
-        private void panelXml_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void label9_Click(object sender, EventArgs e)
         {
@@ -294,7 +285,7 @@ namespace EtherFACE1
 
                     else
                     {
-                        MessageBox.Show("Storing Failure..!");
+                        MessageBox.Show("Writing Failure..!");
                     }
                 }
                 catch (Exception ex)
@@ -383,28 +374,6 @@ namespace EtherFACE1
             }
         }
 
-        private void radioButtonOff_clicked(object sender, EventArgs e) // turning off the Selected Port
-        {
-            if (port_considered != null)
-            {
-                if (port_considered.IsOpen)
-                {
-                    port_considered.Close();
-                    pORTcomboboxmenuitem.Items.Clear();
-                }
-                else
-                {
-                    MessageBox.Show("No port in Action !");
-                }
-                pORTcomboboxmenuitem.SelectedText = "";
-                pORTcomboboxmenuitem.Items.Clear();
-            }
-
-            timer1.Enabled = false;
-
-            this.radioButtonOn.BackColor = Color.SkyBlue;
-
-        }
 
         private void timer_tick(object sender, EventArgs e)
         {
@@ -525,30 +494,31 @@ namespace EtherFACE1
         }
 
 
-        
-
-        private void label9_Click_1(object sender, EventArgs e)
+        public static byte[] FramGenerator(byte[] bytes)
         {
 
+            int lenghtOfBytearray;
+
+            byte preheader1 = 0xAA;
+            byte preheader2 = 0xAB;
+
+          
+            lenghtOfBytearray = bytes.Length + 2;
+
+            var Frame = new byte[lenghtOfBytearray];
+
+            Frame[0] = preheader1;
+            Frame[1] = preheader2;
+
+            for (int i = 2; i < lenghtOfBytearray; i++)
+               {
+                   Frame[i] = bytes[i - 2];
+               }
+                
+                return Frame;
+            
         }
 
-        private void noPortsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
 
 
 
@@ -609,14 +579,12 @@ namespace EtherFACE1
  *             */
         #endregion
 
-
-
         // Reading byte-wise
 
 
         public int bytestoreadValue;
 
-        private void ReadSerial() //Serial Reading
+        private void ReadSerial() //Serial Reading iSP
         {
             while (port_considered.IsOpen)
             {
@@ -787,7 +755,6 @@ namespace EtherFACE1
             }
         }
             
-
         private void buttonActivate_Click(object sender, EventArgs e)
         {
             if (richTextBoxFileName.TextLength != 10)
@@ -836,6 +803,323 @@ namespace EtherFACE1
 
         }
 
+
+
+        //Tab Opearions...................................................................................
+
+        #region
+        //This will only show the selected tabs
+        public void tabShow(Panel showOnly)
+        {
+
+            Panel[] panelList = { panelNetwork, panelXml, panelBasicFeatures, panelGPIOOperation, panelMotorOp, panelGCodeImp };
+
+            foreach (var item in panelList)
+            {
+                item.Visible = false;
+            }
+
+            showOnly.Visible = true;
+            showOnly.Location = new Point(305, 43);
+        }
+
+        //This will Close the selected tabs
+        public void tabClose()
+        {
+
+            Panel[] panelList = { panelNetwork, panelXml, panelBasicFeatures, panelGPIOOperation, panelMotorOp, panelGCodeImp };
+
+            foreach (var item in panelList)
+            {
+                item.Visible = false;
+            }
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tabShow(panelGPIOOperation );
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabShow(panelXml);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            tabShow(panelGCodeImp);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabShow(panelNetwork);
+            
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            
+            tabShow(panelBasicFeatures);
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            tabShow(panelMotorOp);
+        }
+
+        private void pictureBoxBasicfclosed_Click(object sender, EventArgs e)
+        {
+            panelBasicFeatures.Visible = false;
+        }
+
+        private void pictureBoxGPIOclose_Click(object sender, EventArgs e)
+        {
+            panelGPIOOperation.Visible = false;
+        }
+
+        private void pictureBoxGcodeclose_Click(object sender, EventArgs e)
+        {
+            panelGCodeImp.Visible = false;
+        }
+
+        private void pictureBoxMotoropclose_Click(object sender, EventArgs e)
+        {
+            panelMotorOp.Visible = false;
+        }
+
+        private void pictureBoxXMLclose_Click(object sender, EventArgs e)
+        {
+            panelXml.Visible = false;
+        }
+
+        private void pictureBoxNetmonClose_Click(object sender, EventArgs e)
+        {
+            panelNetwork.Visible = false;
+        }
+
+        #endregion
+
+
+
+
+
+
+
+        private void radioButtonOff_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        // Basic features..................................................................................
+        #region
+
+        private void buttonBootOn_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator(new byte[] {0x64,0x00}));
+        }
+
+        private void buttonSyncOn_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator(new byte[] { 0x65, 0x00 }));
+        }
+
+        private void buttonSyncOff_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator(new byte[] { 0x66, 0x00 }));
+        }
+
+
+
+        #endregion
+
+
+
+        //GPIO Operations..................................................................................
+        #region
+
+        // This will convert text inputs to address
+        private byte AddressCalculator()
+        {
+            try
+            {
+                int intaddr = (Convert.ToInt32(textBoxAddr7.Text)) * 128 +
+                             (Convert.ToInt32(textBoxAddr6.Text)) * 64 +
+                             (Convert.ToInt32(textBoxAddr5.Text)) * 32 +
+                             (Convert.ToInt32(textBoxAddr4.Text)) * 16 +
+                             (Convert.ToInt32(textBoxAddr3.Text)) * 8 +
+                             (Convert.ToInt32(textBoxAddr2.Text)) * 4 +
+                             (Convert.ToInt32(textBoxAddr1.Text)) * 2 +
+                             (Convert.ToInt32(textBoxAddr0.Text)) * 1;
+                return Convert.ToByte(intaddr);
+            }
+            catch (System.FormatException)
+            {
+
+                MessageBox.Show("Please re run the application and Enter a binary address! \nDo not leave the Slave address empty! ");
+                return 0x00;
+            }
+
+        }
+
+        // GP write operations
+        #region
+        static byte outputByte = 0x00;
+
+        // will flip a selected bit from a selectyed byte
+        private byte bitFlipper(int index, byte whichByte)
+        {
+            byte res = Convert.ToByte((whichByte & ~(1 << index)) | ((~whichByte) & (1 << index)));
+            //Console.WriteLine(res);
+            WriteLights(res);
+            return res;
+        }
+
+
+ 
+
+        //This will handle the radiobuttons for writing purpose
+        private void WriteLights(byte light) {
+
+            radioButtonWr0.Checked = false;
+            radioButtonWr1.Checked = false;
+            radioButtonWr2.Checked = false;
+            radioButtonWr3.Checked = false;
+            radioButtonWr4.Checked = false;
+            radioButtonWr5.Checked = false;
+            radioButtonWr6.Checked = false;
+            radioButtonWr7.Checked = false;
+
+            if (((light & 0x01) >> 0) == 1)
+            {
+
+                radioButtonWr0.Checked = true;
+            }
+            if (((light & 0x02) >> 1) == 1)
+            {
+
+                radioButtonWr1.Checked = true;
+            }
+            if (((light & 0x04) >> 2) == 1)
+            {
+
+                radioButtonWr2.Checked = true;
+            }
+            if (((light & 0x08) >> 3) == 1)
+            {
+
+                radioButtonWr3.Checked = true;
+            }
+            if (((light & 0x10) >> 4) == 1)
+            {
+
+                radioButtonWr4.Checked = true;
+            }
+            if (((light & 0x20) >> 5) == 1)
+            {
+
+                radioButtonWr5.Checked = true;
+            }
+            if (((light & 0x40) >> 6) == 1)
+            {
+
+                radioButtonWr6.Checked = true;
+            }
+            if (((light & 0x80) >> 7) == 1)
+            {
+
+                radioButtonWr7.Checked = true;
+            }
+        }
+
+        //Set of functions to make the GP Output byte
+        #region 
+        private void buttonGPO0_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(0, outputByte);
+        }
+
+        private void buttonGPO1_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(1, outputByte);
+        }
+
+        private void buttonGPO2_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(2, outputByte);
+        }
+
+        private void buttonGPO3_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(3, outputByte);
+        }
+
+        private void buttonGPO4_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(4, outputByte);
+        }
+
+        private void buttonGPO5_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(5, outputByte);
+        }
+
+        private void buttonGPO6_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(6, outputByte);
+        }
+
+        private void buttonGPO7_Click(object sender, EventArgs e)
+        {
+            outputByte = bitFlipper(7, outputByte);
+        }
+
+        #endregion
+
+        //GP output write operation
+        private void buttonGPOWrite_Click(object sender, EventArgs e)
+        {            
+            writeData(FramGenerator(new byte[] { 0x10, 0x0A, AddressCalculator(), 0xff, outputByte, 0xc0 }));
+            labelGPIO.Text = "Writing succesful...";
+        }
+        #endregion
+
+        
+        
+
+
+
+        private void buttonGPIRead_Click(object sender, EventArgs e)
+        {
+            writeData(FramGenerator(new byte[] { 0x10, 0x02, AddressCalculator(), 0xff, 0x55, 0xc0 }));
+
+        }
+
+
+
+
+
+
+
+        #endregion
+
+    
+        private void pictureBoxBasicfminimize_Click(object sender, EventArgs e)
+        {
+            
+        }
+        
     }
 }
 

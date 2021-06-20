@@ -233,6 +233,16 @@ namespace EtherFACE1.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Key_features {
+            get {
+                object obj = ResourceManager.GetObject("Key features", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap King {
             get {
                 object obj = ResourceManager.GetObject("King", resourceCulture);
