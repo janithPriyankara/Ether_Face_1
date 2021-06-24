@@ -949,6 +949,27 @@ namespace EtherFACE1
         //GPIO Operations..................................................................................
         #region
 
+        // this will  update the  information of slave address textboxes with the data obtained fromthe combobox 
+        private void comboBoxSlaveAddr_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int slaveaddr = Convert.ToInt32(comboBoxSlaveAddr.Text);
+            MessageBox.Show(slaveaddr.ToString());
+            AddressUpdater(slaveaddr);
+
+
+        }
+
+        private void AddressUpdater(int indexAddr)
+        {
+            var AddressList = new List<TextBox>() { textBoxAddr0, textBoxAddr1, textBoxAddr2, textBoxAddr3, textBoxAddr4, textBoxAddr5, textBoxAddr6, textBoxAddr7 };
+            foreach (var item in AddressList)
+            {
+                item.Text = "0";
+            }
+            AddressList[indexAddr - 0].Text = "1";
+        }
+
+
         // This will convert text inputs to address
         private byte AddressCalculator()
         {
@@ -1119,7 +1140,45 @@ namespace EtherFACE1
         {
             
         }
-        
+
+
+
+
+
+        //Motor Operations..................................................................................
+        private void buttonMotorWrite_Click(object sender, EventArgs e)
+        {
+
+            int pulsemotor1 = Convert.ToInt32(textBoxMotor1.Text);
+            byte firstByte1 = Convert.ToByte((pulsemotor1 & 0x0f00) >> 16);
+            byte secondByte1 = Convert.ToByte((pulsemotor1 & 0x00f0) >> 8);
+            byte thirdByte1 = Convert.ToByte((pulsemotor1 & 0x000f));
+
+
+            int pulsemotor2 = Convert.ToInt32(textBoxMotor2.Text);
+            byte firstByte2 = Convert.ToByte((pulsemotor2 & 0x0f00) >> 16);
+            byte secondByte2 = Convert.ToByte((pulsemotor2 & 0x00f0) >> 8);
+            byte thirdByte2 = Convert.ToByte((pulsemotor2 & 0x000f));
+
+            if (pulsemotor1 < 0) {
+                writeData(FramGenerator(new byte[] { 0x10, 0x0B, 0x13, 0x08, 0x01, firstByte1, secondByte1, thirdByte1, 0x04, firstByte2, secondByte2, thirdByte2, 0x00 }));
+            }
+            else
+            {
+                writeData(FramGenerator(new byte[] { 0x10, 0x0B, 0x13, 0x08, 0x01, firstByte1, secondByte1, thirdByte1, 0x04, firstByte2, secondByte2, thirdByte2, 0x00 }));
+            }
+            if (pulsemotor2 < 0) {
+                writeData(FramGenerator(new byte[] { 0x10, 0x0B, 0x13, 0x08, 0x01, firstByte1, secondByte1, thirdByte1, 0x04, firstByte2, secondByte2, thirdByte2, 0x00 }));
+            }
+            else
+            {
+                writeData(FramGenerator(new byte[] { 0x10, 0x0B, 0x13, 0x08, 0x01, firstByte1, secondByte1, thirdByte1, 0x04, firstByte2, secondByte2, thirdByte2, 0x00 }));
+            }
+
+        }
+
+
+
     }
 }
 

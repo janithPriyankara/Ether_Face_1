@@ -241,16 +241,6 @@
             this.radioButtonWr6 = new System.Windows.Forms.RadioButton();
             this.buttonGPO7 = new System.Windows.Forms.Button();
             this.radioButtonWr7 = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBoxAddr6 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr5 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr4 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr3 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr2 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr1 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr0 = new System.Windows.Forms.TextBox();
-            this.textBoxAddr7 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.labelGPIO = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -265,12 +255,12 @@
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panelMotorOp = new System.Windows.Forms.Panel();
-            this.button31 = new System.Windows.Forms.Button();
+            this.buttonMotorWrite = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxMotor2 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBoxMotor1 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -325,6 +315,17 @@
             this.ladderToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.networkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxAddr7 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr0 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr1 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr2 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr3 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr4 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr5 = new System.Windows.Forms.TextBox();
+            this.textBoxAddr6 = new System.Windows.Forms.TextBox();
+            this.comboBoxSlaveAddr = new System.Windows.Forms.ComboBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.panelNetwork.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -373,7 +374,6 @@
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
@@ -410,6 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGcodeclose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -2133,70 +2134,6 @@
             this.radioButtonWr7.TabStop = true;
             this.radioButtonWr7.UseVisualStyleBackColor = true;
             // 
-            // groupBox6
-            // 
-            this.groupBox6.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox6.Controls.Add(this.textBoxAddr6);
-            this.groupBox6.Controls.Add(this.textBoxAddr5);
-            this.groupBox6.Controls.Add(this.textBoxAddr4);
-            this.groupBox6.Controls.Add(this.textBoxAddr3);
-            this.groupBox6.Controls.Add(this.textBoxAddr2);
-            this.groupBox6.Controls.Add(this.textBoxAddr1);
-            this.groupBox6.Controls.Add(this.textBoxAddr0);
-            this.groupBox6.Controls.Add(this.textBoxAddr7);
-            this.groupBox6.Controls.Add(this.label12);
-            resources.ApplyResources(this.groupBox6, "groupBox6");
-            this.groupBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.TabStop = false;
-            // 
-            // textBoxAddr6
-            // 
-            resources.ApplyResources(this.textBoxAddr6, "textBoxAddr6");
-            this.textBoxAddr6.Name = "textBoxAddr6";
-            // 
-            // textBoxAddr5
-            // 
-            resources.ApplyResources(this.textBoxAddr5, "textBoxAddr5");
-            this.textBoxAddr5.Name = "textBoxAddr5";
-            // 
-            // textBoxAddr4
-            // 
-            resources.ApplyResources(this.textBoxAddr4, "textBoxAddr4");
-            this.textBoxAddr4.Name = "textBoxAddr4";
-            // 
-            // textBoxAddr3
-            // 
-            resources.ApplyResources(this.textBoxAddr3, "textBoxAddr3");
-            this.textBoxAddr3.Name = "textBoxAddr3";
-            // 
-            // textBoxAddr2
-            // 
-            resources.ApplyResources(this.textBoxAddr2, "textBoxAddr2");
-            this.textBoxAddr2.Name = "textBoxAddr2";
-            // 
-            // textBoxAddr1
-            // 
-            resources.ApplyResources(this.textBoxAddr1, "textBoxAddr1");
-            this.textBoxAddr1.Name = "textBoxAddr1";
-            // 
-            // textBoxAddr0
-            // 
-            resources.ApplyResources(this.textBoxAddr0, "textBoxAddr0");
-            this.textBoxAddr0.Name = "textBoxAddr0";
-            // 
-            // textBoxAddr7
-            // 
-            resources.ApplyResources(this.textBoxAddr7, "textBoxAddr7");
-            this.textBoxAddr7.Name = "textBoxAddr7";
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Name = "label12";
-            // 
             // labelGPIO
             // 
             this.labelGPIO.BackColor = System.Drawing.Color.Thistle;
@@ -2294,35 +2231,36 @@
             // 
             this.panelMotorOp.BackColor = System.Drawing.Color.Thistle;
             resources.ApplyResources(this.panelMotorOp, "panelMotorOp");
-            this.panelMotorOp.Controls.Add(this.button31);
+            this.panelMotorOp.Controls.Add(this.buttonMotorWrite);
             this.panelMotorOp.Controls.Add(this.groupBox12);
             this.panelMotorOp.Controls.Add(this.groupBox13);
             this.panelMotorOp.Controls.Add(this.label23);
             this.panelMotorOp.Controls.Add(this.groupBox15);
             this.panelMotorOp.Name = "panelMotorOp";
             // 
-            // button31
+            // buttonMotorWrite
             // 
-            this.button31.BackColor = System.Drawing.Color.LightPink;
-            this.button31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            resources.ApplyResources(this.button31, "button31");
-            this.button31.Name = "button31";
-            this.button31.UseVisualStyleBackColor = false;
+            this.buttonMotorWrite.BackColor = System.Drawing.Color.LightPink;
+            this.buttonMotorWrite.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            resources.ApplyResources(this.buttonMotorWrite, "buttonMotorWrite");
+            this.buttonMotorWrite.Name = "buttonMotorWrite";
+            this.buttonMotorWrite.UseVisualStyleBackColor = false;
+            this.buttonMotorWrite.Click += new System.EventHandler(this.buttonMotorWrite_Click);
             // 
             // groupBox12
             // 
             this.groupBox12.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox12.Controls.Add(this.textBox12);
+            this.groupBox12.Controls.Add(this.textBoxMotor2);
             this.groupBox12.Controls.Add(this.label20);
             resources.ApplyResources(this.groupBox12, "groupBox12");
             this.groupBox12.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.TabStop = false;
             // 
-            // textBox12
+            // textBoxMotor2
             // 
-            resources.ApplyResources(this.textBox12, "textBox12");
-            this.textBox12.Name = "textBox12";
+            resources.ApplyResources(this.textBoxMotor2, "textBoxMotor2");
+            this.textBoxMotor2.Name = "textBoxMotor2";
             // 
             // label20
             // 
@@ -2334,17 +2272,17 @@
             // groupBox13
             // 
             this.groupBox13.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox13.Controls.Add(this.textBox11);
+            this.groupBox13.Controls.Add(this.textBoxMotor1);
             this.groupBox13.Controls.Add(this.label19);
             resources.ApplyResources(this.groupBox13, "groupBox13");
             this.groupBox13.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.TabStop = false;
             // 
-            // textBox11
+            // textBoxMotor1
             // 
-            resources.ApplyResources(this.textBox11, "textBox11");
-            this.textBox11.Name = "textBox11";
+            resources.ApplyResources(this.textBoxMotor1, "textBoxMotor1");
+            this.textBoxMotor1.Name = "textBoxMotor1";
             // 
             // label19
             // 
@@ -2727,11 +2665,99 @@
             resources.ApplyResources(this.xMLToolStripMenuItem3, "xMLToolStripMenuItem3");
             this.xMLToolStripMenuItem3.Click += new System.EventHandler(this.xMLToolStripMenuItem3_Click);
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Name = "label12";
+            // 
+            // textBoxAddr7
+            // 
+            resources.ApplyResources(this.textBoxAddr7, "textBoxAddr7");
+            this.textBoxAddr7.Name = "textBoxAddr7";
+            this.textBoxAddr7.ReadOnly = true;
+            // 
+            // textBoxAddr0
+            // 
+            resources.ApplyResources(this.textBoxAddr0, "textBoxAddr0");
+            this.textBoxAddr0.Name = "textBoxAddr0";
+            this.textBoxAddr0.ReadOnly = true;
+            // 
+            // textBoxAddr1
+            // 
+            resources.ApplyResources(this.textBoxAddr1, "textBoxAddr1");
+            this.textBoxAddr1.Name = "textBoxAddr1";
+            this.textBoxAddr1.ReadOnly = true;
+            // 
+            // textBoxAddr2
+            // 
+            resources.ApplyResources(this.textBoxAddr2, "textBoxAddr2");
+            this.textBoxAddr2.Name = "textBoxAddr2";
+            this.textBoxAddr2.ReadOnly = true;
+            // 
+            // textBoxAddr3
+            // 
+            resources.ApplyResources(this.textBoxAddr3, "textBoxAddr3");
+            this.textBoxAddr3.Name = "textBoxAddr3";
+            this.textBoxAddr3.ReadOnly = true;
+            // 
+            // textBoxAddr4
+            // 
+            resources.ApplyResources(this.textBoxAddr4, "textBoxAddr4");
+            this.textBoxAddr4.Name = "textBoxAddr4";
+            this.textBoxAddr4.ReadOnly = true;
+            // 
+            // textBoxAddr5
+            // 
+            resources.ApplyResources(this.textBoxAddr5, "textBoxAddr5");
+            this.textBoxAddr5.Name = "textBoxAddr5";
+            this.textBoxAddr5.ReadOnly = true;
+            // 
+            // textBoxAddr6
+            // 
+            resources.ApplyResources(this.textBoxAddr6, "textBoxAddr6");
+            this.textBoxAddr6.Name = "textBoxAddr6";
+            this.textBoxAddr6.ReadOnly = true;
+            // 
+            // comboBoxSlaveAddr
+            // 
+            this.comboBoxSlaveAddr.BackColor = System.Drawing.Color.Thistle;
+            this.comboBoxSlaveAddr.FormattingEnabled = true;
+            this.comboBoxSlaveAddr.Items.AddRange(new object[] {
+            resources.GetString("comboBoxSlaveAddr.Items"),
+            resources.GetString("comboBoxSlaveAddr.Items1"),
+            resources.GetString("comboBoxSlaveAddr.Items2"),
+            resources.GetString("comboBoxSlaveAddr.Items3")});
+            resources.ApplyResources(this.comboBoxSlaveAddr, "comboBoxSlaveAddr");
+            this.comboBoxSlaveAddr.Name = "comboBoxSlaveAddr";
+            this.comboBoxSlaveAddr.SelectedIndexChanged += new System.EventHandler(this.comboBoxSlaveAddr_SelectedIndexChanged);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox6.Controls.Add(this.comboBoxSlaveAddr);
+            this.groupBox6.Controls.Add(this.textBoxAddr6);
+            this.groupBox6.Controls.Add(this.textBoxAddr5);
+            this.groupBox6.Controls.Add(this.textBoxAddr4);
+            this.groupBox6.Controls.Add(this.textBoxAddr3);
+            this.groupBox6.Controls.Add(this.textBoxAddr2);
+            this.groupBox6.Controls.Add(this.textBoxAddr1);
+            this.groupBox6.Controls.Add(this.textBoxAddr0);
+            this.groupBox6.Controls.Add(this.textBoxAddr7);
+            this.groupBox6.Controls.Add(this.label12);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
+            // 
             // cformEtherFace
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.panelMotorOp);
+            this.Controls.Add(this.panelGPIOOperation);
             this.Controls.Add(this.panelXml);
             this.Controls.Add(this.radioButtonOn);
             this.Controls.Add(this.radioButtonOff);
@@ -2740,9 +2766,7 @@
             this.Controls.Add(this.panelBasicFeatures);
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox11);
-            this.Controls.Add(this.panelGPIOOperation);
             this.Controls.Add(this.panelGCodeImp);
-            this.Controls.Add(this.panelMotorOp);
             this.Controls.Add(this.panelNetwork);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
@@ -2813,8 +2837,6 @@
             this.groupBox9.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
@@ -2859,6 +2881,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGcodeclose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3023,8 +3047,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button buttonSyncOn;
         private System.Windows.Forms.Panel panelGPIOOperation;
-        private System.Windows.Forms.TextBox textBoxAddr7;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelGPIO;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox7;
@@ -3076,20 +3098,12 @@
         private System.Windows.Forms.RadioButton radioButtonWr6;
         private System.Windows.Forms.Button buttonGPO7;
         private System.Windows.Forms.RadioButton radioButtonWr7;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBoxAddr6;
-        private System.Windows.Forms.TextBox textBoxAddr5;
-        private System.Windows.Forms.TextBox textBoxAddr4;
-        private System.Windows.Forms.TextBox textBoxAddr3;
-        private System.Windows.Forms.TextBox textBoxAddr2;
-        private System.Windows.Forms.TextBox textBoxAddr1;
-        private System.Windows.Forms.TextBox textBoxAddr0;
         private System.Windows.Forms.Button button29;
         private System.Windows.Forms.Button buttonGPIRead;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panelMotorOp;
-        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button buttonMotorWrite;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox15;
@@ -3104,9 +3118,9 @@
         private System.Windows.Forms.PictureBox pictureBox37;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxMotor2;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxMotor1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panelGCodeImp;
         private System.Windows.Forms.TabControl tabControl1;
@@ -3161,6 +3175,17 @@
         private System.Windows.Forms.ToolStripMenuItem gCodeToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem ladderToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem xMLToolStripMenuItem2;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox comboBoxSlaveAddr;
+        private System.Windows.Forms.TextBox textBoxAddr6;
+        private System.Windows.Forms.TextBox textBoxAddr5;
+        private System.Windows.Forms.TextBox textBoxAddr4;
+        private System.Windows.Forms.TextBox textBoxAddr3;
+        private System.Windows.Forms.TextBox textBoxAddr2;
+        private System.Windows.Forms.TextBox textBoxAddr1;
+        private System.Windows.Forms.TextBox textBoxAddr0;
+        private System.Windows.Forms.TextBox textBoxAddr7;
+        private System.Windows.Forms.Label label12;
     }
 }
 
