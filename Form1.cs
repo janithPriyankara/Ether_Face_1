@@ -916,7 +916,24 @@ namespace EtherFACE1
 
         private void radioButtonOff_CheckedChanged(object sender, EventArgs e)
         {
+            if (port_considered != null)
+            {
+                if (port_considered.IsOpen)
+                {
+                    port_considered.Close();
+                    pORTcomboboxmenuitem.Items.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No port in Action !");
+                }
+                pORTcomboboxmenuitem.SelectedText = "";
+                pORTcomboboxmenuitem.Items.Clear();
+            }
 
+            timer1.Enabled = false;
+
+            this.radioButtonOn.BackColor = Color.SkyBlue;
         }
 
 
