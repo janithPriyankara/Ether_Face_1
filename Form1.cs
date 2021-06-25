@@ -614,18 +614,33 @@ namespace EtherFACE1
             }
             else
             {
-                FrameDecoder(s.ToList());
+                //FrameDecoder(s.ToList());
 
-            //                foreach (var item in s) {
-            //                  richTextBoxReciever.AppendText(Environment.NewLine + item);
-            //
-            //             }
+                //                foreach (var item in s) {
+                //                  richTextBoxReciever.AppendText(Environment.NewLine + item);
+                //
+                //             }
+
+
+                string income = "";
+
+                foreach (var item in s) {
+                    income += item;
+
+                }
+
+                MessageBox.Show(income);
+
 
             }
         }
 
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="InFrame"></param>
         public static void FrameDecoder(List<byte> InFrame) {
 
             int preHeader1Index;
@@ -641,12 +656,28 @@ namespace EtherFACE1
 
             if ( (preHeader1Index >= -1) & (preHeader2Index >= -1) ) {
 
+                //Not corrupted frame
+                if ((preHeader2Index-preHeader1Index) ==1) {
+                    if ((InFrame[preHeader2Index + 1] == 0x10) && (InFrame[preHeader2Index + 1] == 0x06)) {
+
+
+
+                    }
+
+
+                }
+                else {
+                    MessageBox.Show("Data is corrupted, couldn't recieve the fgrame header!");
+                }
+
 
                 //Sending intger values of bytes because no need of bytes to process
                 for (int i = 3;i<InFrame.Count;i++) {
                     payload[i-3] = InFrame[i];
                 }
-
+                
+                
+                /*
                 header = Convert.ToByte(InFrame[preHeader2Index + 1] >> 4);
                 task = Convert.ToByte(header & 0x0F);
 
@@ -685,7 +716,7 @@ namespace EtherFACE1
                         break;
 
 
-                }
+                }*/
             }
 
 
