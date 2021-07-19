@@ -270,7 +270,7 @@ namespace EtherFACE1
 
                     if (port_considered.IsOpen == true)
                     {
-                        MessageBox.Show(dataIn.Length.ToString());
+                        //MessageBox.Show(dataIn.Length.ToString());
 
                         while (true)
                         {
@@ -629,7 +629,7 @@ namespace EtherFACE1
 
                 }
 
-                MessageBox.Show(income);
+                //MessageBox.Show(income);
 
 
             }
@@ -667,7 +667,7 @@ namespace EtherFACE1
 
                 }
                 else {
-                    MessageBox.Show("Data is corrupted, couldn't recieve the fgrame header!");
+                    MessageBox.Show("Data is corrupted, couldn't recieve the frame header!");
                 }
 
 
@@ -1001,7 +1001,7 @@ namespace EtherFACE1
         private void comboBoxSlaveAddr_SelectedIndexChanged(object sender, EventArgs e)
         {
             int slaveaddr = Convert.ToInt32(comboBoxSlaveAddr.Text);
-            MessageBox.Show(slaveaddr.ToString());
+            //MessageBox.Show(slaveaddr.ToString());
             AddressUpdater(slaveaddr);
 
 
@@ -1014,7 +1014,14 @@ namespace EtherFACE1
             {
                 item.Text = "0";
             }
-            AddressList[indexAddr - 0].Text = "1";
+            AddressList[0].Text = ((indexAddr & 0x01) >> 0).ToString();
+            AddressList[1].Text = ((indexAddr & 0x02) >> 1).ToString();
+            AddressList[2].Text = ((indexAddr & 0x04) >> 2).ToString();
+            AddressList[3].Text = ((indexAddr & 0x08) >> 3).ToString();
+            AddressList[4].Text = ((indexAddr & 0x10) >> 4).ToString();
+            AddressList[5].Text = ((indexAddr & 0x20) >> 5).ToString();
+            AddressList[6].Text = ((indexAddr & 0x40) >> 6).ToString();
+            AddressList[7].Text = ((indexAddr & 0x80) >> 7).ToString();
         }
 
 
