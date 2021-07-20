@@ -642,8 +642,14 @@ namespace EtherFACE1
 
 
 
-        public static void FrameDecoder(List<byte> InFrame) {
-            
+        private void FrameDecoder(List<byte> InFrame) {
+
+            if (InFrame.Count==5) {
+
+                readUpdater(InFrame[3]);
+            }
+
+
             var header = InFrame[0] & 0xf0;
             
             switch (header) {
@@ -1232,6 +1238,7 @@ namespace EtherFACE1
         #endregion
 
         
+        //GP Read Operations
         
 
 
@@ -1239,6 +1246,26 @@ namespace EtherFACE1
         private void buttonGPIRead_Click(object sender, EventArgs e)
         {
             writeData(FramGenerator(new byte[] { 0x10, 0x02, AddressCalculator(), 0xff, 0x55, 0xc0 }));
+          
+        }
+
+        private void readUpdater(byte reading) {
+            var radiobuttonList = new List<RadioButton>() {  radioButtonR0, radioButtonR1, radioButtonR2, radioButtonR3, radioButtonR4, radioButtonR5, radioButtonR6, radioButtonR7 };
+
+            for (int i = 0; i < 8; i++)
+            {
+                radiobuttonList[i].Checked = false;
+            }
+
+
+            for (int i = 0; i < 8; i++)
+            {
+                if ( ((reading >> i) & 1) == 1)
+                {
+                    radiobuttonList[i].Checked = true;
+                }
+            }
+
 
         }
 
@@ -1246,11 +1273,9 @@ namespace EtherFACE1
 
 
 
-
-
         #endregion
 
-    
+
         private void pictureBoxBasicfminimize_Click(object sender, EventArgs e)
         {
             

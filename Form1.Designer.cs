@@ -209,21 +209,21 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.buttonGPI0 = new System.Windows.Forms.Button();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR0 = new System.Windows.Forms.RadioButton();
             this.buttonGPI1 = new System.Windows.Forms.Button();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR1 = new System.Windows.Forms.RadioButton();
             this.buttonGPI2 = new System.Windows.Forms.Button();
-            this.radioButton11 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR2 = new System.Windows.Forms.RadioButton();
             this.buttonGPI3 = new System.Windows.Forms.Button();
-            this.radioButton12 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR3 = new System.Windows.Forms.RadioButton();
             this.buttonGPI4 = new System.Windows.Forms.Button();
-            this.radioButton13 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR4 = new System.Windows.Forms.RadioButton();
             this.buttonGPI5 = new System.Windows.Forms.Button();
-            this.radioButton14 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR5 = new System.Windows.Forms.RadioButton();
             this.buttonGPI6 = new System.Windows.Forms.Button();
-            this.radioButton15 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR6 = new System.Windows.Forms.RadioButton();
             this.buttonGPI7 = new System.Windows.Forms.Button();
-            this.radioButton16 = new System.Windows.Forms.RadioButton();
+            this.radioButtonR7 = new System.Windows.Forms.RadioButton();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.buttonGPO0 = new System.Windows.Forms.Button();
             this.radioButtonWr0 = new System.Windows.Forms.RadioButton();
@@ -1785,21 +1785,21 @@
             // 
             this.groupBox9.BackColor = System.Drawing.Color.Transparent;
             this.groupBox9.Controls.Add(this.buttonGPI0);
-            this.groupBox9.Controls.Add(this.radioButton9);
+            this.groupBox9.Controls.Add(this.radioButtonR0);
             this.groupBox9.Controls.Add(this.buttonGPI1);
-            this.groupBox9.Controls.Add(this.radioButton10);
+            this.groupBox9.Controls.Add(this.radioButtonR1);
             this.groupBox9.Controls.Add(this.buttonGPI2);
-            this.groupBox9.Controls.Add(this.radioButton11);
+            this.groupBox9.Controls.Add(this.radioButtonR2);
             this.groupBox9.Controls.Add(this.buttonGPI3);
-            this.groupBox9.Controls.Add(this.radioButton12);
+            this.groupBox9.Controls.Add(this.radioButtonR3);
             this.groupBox9.Controls.Add(this.buttonGPI4);
-            this.groupBox9.Controls.Add(this.radioButton13);
+            this.groupBox9.Controls.Add(this.radioButtonR4);
             this.groupBox9.Controls.Add(this.buttonGPI5);
-            this.groupBox9.Controls.Add(this.radioButton14);
+            this.groupBox9.Controls.Add(this.radioButtonR5);
             this.groupBox9.Controls.Add(this.buttonGPI6);
-            this.groupBox9.Controls.Add(this.radioButton15);
+            this.groupBox9.Controls.Add(this.radioButtonR6);
             this.groupBox9.Controls.Add(this.buttonGPI7);
-            this.groupBox9.Controls.Add(this.radioButton16);
+            this.groupBox9.Controls.Add(this.radioButtonR7);
             resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox9.Name = "groupBox9";
@@ -1813,12 +1813,15 @@
             this.buttonGPI0.Name = "buttonGPI0";
             this.buttonGPI0.UseVisualStyleBackColor = false;
             // 
-            // radioButton9
+            // radioButtonR0
             // 
-            resources.ApplyResources(this.radioButton9, "radioButton9");
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.TabStop = true;
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.radioButtonR0.AllowDrop = true;
+            this.radioButtonR0.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR0, "radioButtonR0");
+            this.radioButtonR0.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR0.Name = "radioButtonR0";
+            this.radioButtonR0.TabStop = true;
+            this.radioButtonR0.UseVisualStyleBackColor = true;
             // 
             // buttonGPI1
             // 
@@ -1828,12 +1831,15 @@
             this.buttonGPI1.Name = "buttonGPI1";
             this.buttonGPI1.UseVisualStyleBackColor = false;
             // 
-            // radioButton10
+            // radioButtonR1
             // 
-            resources.ApplyResources(this.radioButton10, "radioButton10");
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.TabStop = true;
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.radioButtonR1.AllowDrop = true;
+            this.radioButtonR1.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR1, "radioButtonR1");
+            this.radioButtonR1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR1.Name = "radioButtonR1";
+            this.radioButtonR1.TabStop = true;
+            this.radioButtonR1.UseVisualStyleBackColor = true;
             // 
             // buttonGPI2
             // 
@@ -1843,12 +1849,15 @@
             this.buttonGPI2.Name = "buttonGPI2";
             this.buttonGPI2.UseVisualStyleBackColor = false;
             // 
-            // radioButton11
+            // radioButtonR2
             // 
-            resources.ApplyResources(this.radioButton11, "radioButton11");
-            this.radioButton11.Name = "radioButton11";
-            this.radioButton11.TabStop = true;
-            this.radioButton11.UseVisualStyleBackColor = true;
+            this.radioButtonR2.AllowDrop = true;
+            this.radioButtonR2.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR2, "radioButtonR2");
+            this.radioButtonR2.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR2.Name = "radioButtonR2";
+            this.radioButtonR2.TabStop = true;
+            this.radioButtonR2.UseVisualStyleBackColor = true;
             // 
             // buttonGPI3
             // 
@@ -1858,12 +1867,15 @@
             this.buttonGPI3.Name = "buttonGPI3";
             this.buttonGPI3.UseVisualStyleBackColor = false;
             // 
-            // radioButton12
+            // radioButtonR3
             // 
-            resources.ApplyResources(this.radioButton12, "radioButton12");
-            this.radioButton12.Name = "radioButton12";
-            this.radioButton12.TabStop = true;
-            this.radioButton12.UseVisualStyleBackColor = true;
+            this.radioButtonR3.AllowDrop = true;
+            this.radioButtonR3.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR3, "radioButtonR3");
+            this.radioButtonR3.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR3.Name = "radioButtonR3";
+            this.radioButtonR3.TabStop = true;
+            this.radioButtonR3.UseVisualStyleBackColor = true;
             // 
             // buttonGPI4
             // 
@@ -1873,12 +1885,15 @@
             this.buttonGPI4.Name = "buttonGPI4";
             this.buttonGPI4.UseVisualStyleBackColor = false;
             // 
-            // radioButton13
+            // radioButtonR4
             // 
-            resources.ApplyResources(this.radioButton13, "radioButton13");
-            this.radioButton13.Name = "radioButton13";
-            this.radioButton13.TabStop = true;
-            this.radioButton13.UseVisualStyleBackColor = true;
+            this.radioButtonR4.AllowDrop = true;
+            this.radioButtonR4.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR4, "radioButtonR4");
+            this.radioButtonR4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR4.Name = "radioButtonR4";
+            this.radioButtonR4.TabStop = true;
+            this.radioButtonR4.UseVisualStyleBackColor = true;
             // 
             // buttonGPI5
             // 
@@ -1888,12 +1903,15 @@
             this.buttonGPI5.Name = "buttonGPI5";
             this.buttonGPI5.UseVisualStyleBackColor = false;
             // 
-            // radioButton14
+            // radioButtonR5
             // 
-            resources.ApplyResources(this.radioButton14, "radioButton14");
-            this.radioButton14.Name = "radioButton14";
-            this.radioButton14.TabStop = true;
-            this.radioButton14.UseVisualStyleBackColor = true;
+            this.radioButtonR5.AllowDrop = true;
+            this.radioButtonR5.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR5, "radioButtonR5");
+            this.radioButtonR5.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR5.Name = "radioButtonR5";
+            this.radioButtonR5.TabStop = true;
+            this.radioButtonR5.UseVisualStyleBackColor = true;
             // 
             // buttonGPI6
             // 
@@ -1903,12 +1921,15 @@
             this.buttonGPI6.Name = "buttonGPI6";
             this.buttonGPI6.UseVisualStyleBackColor = false;
             // 
-            // radioButton15
+            // radioButtonR6
             // 
-            resources.ApplyResources(this.radioButton15, "radioButton15");
-            this.radioButton15.Name = "radioButton15";
-            this.radioButton15.TabStop = true;
-            this.radioButton15.UseVisualStyleBackColor = true;
+            this.radioButtonR6.AllowDrop = true;
+            this.radioButtonR6.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR6, "radioButtonR6");
+            this.radioButtonR6.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR6.Name = "radioButtonR6";
+            this.radioButtonR6.TabStop = true;
+            this.radioButtonR6.UseVisualStyleBackColor = true;
             // 
             // buttonGPI7
             // 
@@ -1918,12 +1939,15 @@
             this.buttonGPI7.Name = "buttonGPI7";
             this.buttonGPI7.UseVisualStyleBackColor = false;
             // 
-            // radioButton16
+            // radioButtonR7
             // 
-            resources.ApplyResources(this.radioButton16, "radioButton16");
-            this.radioButton16.Name = "radioButton16";
-            this.radioButton16.TabStop = true;
-            this.radioButton16.UseVisualStyleBackColor = true;
+            this.radioButtonR7.AllowDrop = true;
+            this.radioButtonR7.AutoCheck = false;
+            resources.ApplyResources(this.radioButtonR7, "radioButtonR7");
+            this.radioButtonR7.ForeColor = System.Drawing.Color.OrangeRed;
+            this.radioButtonR7.Name = "radioButtonR7";
+            this.radioButtonR7.TabStop = true;
+            this.radioButtonR7.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
@@ -3084,21 +3108,13 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button buttonGPI0;
-        private System.Windows.Forms.RadioButton radioButton9;
         private System.Windows.Forms.Button buttonGPI1;
-        private System.Windows.Forms.RadioButton radioButton10;
         private System.Windows.Forms.Button buttonGPI2;
-        private System.Windows.Forms.RadioButton radioButton11;
         private System.Windows.Forms.Button buttonGPI3;
-        private System.Windows.Forms.RadioButton radioButton12;
         private System.Windows.Forms.Button buttonGPI4;
-        private System.Windows.Forms.RadioButton radioButton13;
         private System.Windows.Forms.Button buttonGPI5;
-        private System.Windows.Forms.RadioButton radioButton14;
         private System.Windows.Forms.Button buttonGPI6;
-        private System.Windows.Forms.RadioButton radioButton15;
         private System.Windows.Forms.Button buttonGPI7;
-        private System.Windows.Forms.RadioButton radioButton16;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button buttonGPO0;
         private System.Windows.Forms.RadioButton radioButtonWr0;
@@ -3206,6 +3222,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelBootconfig;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.RadioButton radioButtonR0;
+        public System.Windows.Forms.RadioButton radioButtonR1;
+        public System.Windows.Forms.RadioButton radioButtonR2;
+        public System.Windows.Forms.RadioButton radioButtonR3;
+        public System.Windows.Forms.RadioButton radioButtonR4;
+        public System.Windows.Forms.RadioButton radioButtonR5;
+        public System.Windows.Forms.RadioButton radioButtonR6;
+        public System.Windows.Forms.RadioButton radioButtonR7;
     }
 }
 
