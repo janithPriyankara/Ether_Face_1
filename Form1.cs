@@ -626,18 +626,16 @@ namespace EtherFACE1
                 //
                 //   }
 
-                /*
+                
                 string income = "";
 
                 foreach (var item in s) {
                     income += item;
-
+                    
                 }
-                */
 
+                MessageBox.Show(income.ToString());
                 FrameDecoder(s.ToList());
-
-
             }
         }
 
@@ -645,24 +643,26 @@ namespace EtherFACE1
 
 
         public static void FrameDecoder(List<byte> InFrame) {
-
+            
             var header = InFrame[0] & 0xf0;
+            
+            switch (header) {
+                
+                case 0x30: //Control Commands
 
-                switch (header) {
-
-                    case 0x30: //Control Commands
-                        ControlCommands(InFrame);
-                        break;
-
-                    case 0x40: //XML
-                        break;
-
-                    case 0x70: //Emergency
-                        break;
-
-                   
-                    default:  //Part of a frame????????????????????
-                        break;
+                    ControlCommands(InFrame);
+                    break;
+                    
+                case 0x40: //XML
+                    XMLOp(InFrame);
+                    break;
+                    
+                case 0x70: //Emergency
+                    
+                    break;
+                    
+                default:  //Part of a frame????????????????????
+                    break;
 
 
 
@@ -722,44 +722,75 @@ namespace EtherFACE1
 
 
 
-        public static void XMLOperation(byte task, int[] xmlData)
+        public static void XMLOp(List<byte> InFrame)
         {
-            switch (task)
+            var header = InFrame[0] & 0x0f;
+
+            switch (header)
             {
-                case 0x01:  //Read(send the requested XML file data)
+                case 0x01:
+                    MessageBox.Show("Read/ Send the requested XML file data");
                     break;
 
-                case 0x02:  //Load(Send the name of the active XML file)
+                case 0x02:
+                    MessageBox.Show("Load/Send the name of the active XML file");
                     break;
 
-                case 0x04:  //Read Available XML names (send all XML file names in the master)
+                case 0x04:
+                    MessageBox.Show("Read available XML names/ send all XML file names in the master");
                     break;
 
-                case 0x06:  //Delete success (delete this file success)  
+                case 0x05:
+                    MessageBox.Show("Set success/succesdsfuly set this file as the active XML");
                     break;
 
-                case 0x0E:  //Delete unsuccess (delete this file unsuccess)
+                case 0x06:
+                    MessageBox.Show("Delete Success/ delete this file success");
                     break;
 
-                case 0x05:  //Set success (successfully set this file as the active XML)
+                case 0x0D:
+                    MessageBox.Show("Sett unsuccess/ unsuccessdfully set htis file as the active XML");
                     break;
 
-                case 0x0D:  //Set unsuccess (unsuccessfully set this file as the active XML)
+                case 0x0E:
+                    MessageBox.Show("Delete unsuccess/ delete this file unsuccess");
                     break;
 
-                default:    // Others
+                default:
                     break;
                     
             }
+            
+         }
+
+
+        public static void EmergencyAct(List<byte> Inframe) {
+            var header = Inframe[0] & 0x0f;
+            switch (header)
+            {
+                case 0x01:
+                    MessageBox.Show("Limit switch hit");
+                    break;
+                case 0x02:
+                    MessageBox.Show("Communicatrion Link broken");
+                    break;
+                case 0x03:
+                    MessageBox.Show("Slave does not respond for 5 consecutive frames");
+                    break;
+                case 0x04:
+                    MessageBox.Show("Unable to synchronize for a given precision");
+                    break;
+                case 0x05:
+                    MessageBox.Show("Unstable network");
+                    break;
+                case 0x06:
+                    MessageBox.Show("Network restart  required");
+                    break;
+                default:
+                    break;
+            }
+
         }
-
-
-
-
-
-
-
-
 
 
         private void buttonRunning_Click(object sender, EventArgs e)
