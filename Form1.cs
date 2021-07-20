@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 
 
+
 //metroFrameWork
 
 //Serial Port
@@ -18,6 +19,10 @@ using System.IO;
 
 
 //network
+
+
+//Buttons
+using System.Threading.Tasks;
 
 
 namespace EtherFACE1
@@ -973,19 +978,48 @@ namespace EtherFACE1
         // Basic features..................................................................................
         #region
 
-        private void buttonBootOn_Click(object sender, EventArgs e)
+        private async void buttonBootOn_Click(object sender, EventArgs e)
         {
+            await Delay1();
+
             writeData(FramGenerator(new byte[] {0x64,0x00}));
+         
+
+            buttonBootOn.BackColor = Color.Green;
+            labelBootconfig.Text = "Done Booting !";
+
+
         }
 
-        private void buttonSyncOn_Click(object sender, EventArgs e)
+        public async Task Delay1()
+        {
+                await Task.Delay(2000);
+        }
+
+        public async Task Delay2()
+        {
+            await Task.Delay(500);
+        }
+
+
+        private async void buttonSyncOn_Click(object sender, EventArgs e)
         {
             writeData(FramGenerator(new byte[] { 0x65, 0x00 }));
+            await Delay2();
+            buttonSyncOn.BackColor = Color.GreenYellow;
+            buttonSyncOff.BackColor = Color.Lavender;
+
+            labelBootconfig.Text = "Synchronization is Activated !";
         }
 
-        private void buttonSyncOff_Click(object sender, EventArgs e)
+        private async void buttonSyncOff_Click(object sender, EventArgs e)
         {
             writeData(FramGenerator(new byte[] { 0x66, 0x00 }));
+            await Delay2();
+            buttonSyncOff.BackColor = Color.OrangeRed;
+            buttonSyncOn.BackColor = Color.Lavender;
+
+            labelBootconfig.Text = "Synchronization is Deactivated !";
         }
 
 
@@ -1231,10 +1265,9 @@ namespace EtherFACE1
             }
 
         }
-
-
-
     }
+
+
 }
 
 

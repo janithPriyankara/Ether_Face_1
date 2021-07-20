@@ -181,7 +181,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panelBasicFeatures = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.buttonSyncOff = new System.Windows.Forms.Button();
             this.buttonSyncOn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -326,6 +326,8 @@
             this.ladderToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.networkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xMLToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.label14 = new System.Windows.Forms.Label();
+            this.labelBootconfig = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelNetwork.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -1552,6 +1554,8 @@
             // 
             resources.ApplyResources(this.panelBasicFeatures, "panelBasicFeatures");
             this.panelBasicFeatures.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelBasicFeatures.Controls.Add(this.label14);
+            this.panelBasicFeatures.Controls.Add(this.labelBootconfig);
             this.panelBasicFeatures.Controls.Add(this.groupBox5);
             this.panelBasicFeatures.Controls.Add(this.groupBox3);
             this.panelBasicFeatures.Controls.Add(this.groupBox4);
@@ -1561,20 +1565,21 @@
             // groupBox5
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Tan;
-            this.groupBox5.Controls.Add(this.button9);
+            this.groupBox5.Controls.Add(this.buttonSyncOff);
             this.groupBox5.Controls.Add(this.buttonSyncOn);
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
-            // button9
+            // buttonSyncOff
             // 
-            this.button9.BackColor = System.Drawing.Color.LavenderBlush;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
-            this.button9.FlatAppearance.BorderSize = 25;
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = false;
+            this.buttonSyncOff.BackColor = System.Drawing.Color.LavenderBlush;
+            this.buttonSyncOff.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.buttonSyncOff.FlatAppearance.BorderSize = 25;
+            resources.ApplyResources(this.buttonSyncOff, "buttonSyncOff");
+            this.buttonSyncOff.Name = "buttonSyncOff";
+            this.buttonSyncOff.UseVisualStyleBackColor = false;
+            this.buttonSyncOff.Click += new System.EventHandler(this.buttonSyncOff_Click);
             // 
             // buttonSyncOn
             // 
@@ -2750,13 +2755,26 @@
             resources.ApplyResources(this.xMLToolStripMenuItem3, "xMLToolStripMenuItem3");
             this.xMLToolStripMenuItem3.Click += new System.EventHandler(this.xMLToolStripMenuItem3_Click);
             // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // labelBootconfig
+            // 
+            resources.ApplyResources(this.labelBootconfig, "labelBootconfig");
+            this.labelBootconfig.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.labelBootconfig.Name = "labelBootconfig";
+            // 
             // cformEtherFace
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.Controls.Add(this.panelMotorOp);
             this.Controls.Add(this.panelGPIOOperation);
+            this.Controls.Add(this.panelMotorOp);
             this.Controls.Add(this.panelXml);
             this.Controls.Add(this.radioButtonOn);
             this.Controls.Add(this.radioButtonOff);
@@ -2816,6 +2834,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.panelBasicFeatures.ResumeLayout(false);
+            this.panelBasicFeatures.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -3043,7 +3062,7 @@
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.Button buttonBootOn;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button buttonSyncOff;
         private System.Windows.Forms.Button buttonSyncOn;
         private System.Windows.Forms.Panel panelGPIOOperation;
         private System.Windows.Forms.Label labelGPIO;
@@ -3185,6 +3204,8 @@
         private System.Windows.Forms.TextBox textBoxAddr0;
         private System.Windows.Forms.TextBox textBoxAddr7;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelBootconfig;
+        private System.Windows.Forms.Label label14;
     }
 }
 
