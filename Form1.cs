@@ -621,20 +621,21 @@ namespace EtherFACE1
             {
                 //FrameDecoder(s.ToList());
 
-                //                foreach (var item in s) {
-                //                  richTextBoxReciever.AppendText(Environment.NewLine + item);
+                //   foreach (var item in s) {
+                //   RichTextBoxReciever.AppendText(Environment.NewLine + item);
                 //
-                //             }
+                //   }
 
-
+                /*
                 string income = "";
 
                 foreach (var item in s) {
                     income += item;
 
                 }
+                */
 
-                //MessageBox.Show(income);
+                FrameDecoder(s.ToList());
 
 
             }
@@ -642,90 +643,84 @@ namespace EtherFACE1
 
 
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="InFrame"></param>
+
         public static void FrameDecoder(List<byte> InFrame) {
 
-            int preHeader1Index;
-            int preHeader2Index;
-
-            byte header;//main categories
-            byte task;//task of selected category
-
-            var payload = new List<int>();
-
-            preHeader1Index = InFrame.IndexOf(0xAA);
-            preHeader2Index = InFrame.IndexOf(0xAB);
-
-            if ( (preHeader1Index >= -1) & (preHeader2Index >= -1) ) {
-
-                //Not corrupted frame
-                if ((preHeader2Index-preHeader1Index) ==1) {
-                    if ((InFrame[preHeader2Index + 1] == 0x10) && (InFrame[preHeader2Index + 1] == 0x06)) {
-
-
-
-                    }
-
-
-                }
-                else {
-                    MessageBox.Show("Data is corrupted, couldn't recieve the frame header!");
-                }
-
-
-                //Sending intger values of bytes because no need of bytes to process
-                for (int i = 3;i<InFrame.Count;i++) {
-                    payload[i-3] = InFrame[i];
-                }
-                
-                
-                /*
-                header = Convert.ToByte(InFrame[preHeader2Index + 1] >> 4);
-                task = Convert.ToByte(header & 0x0F);
+            var header = InFrame[0] & 0xf0;
 
                 switch (header) {
 
-                    case 0x02: //Register read local memory space
+                    case 0x30: //Control Commands
+                        ControlCommands(InFrame);
                         break;
 
-                    case 0x0A: //Register read user memory space
+                    case 0x40: //XML
                         break;
 
-                    case 0x03: //Read triggered time of digital input
+                    case 0x70: //Emergency
                         break;
 
-                    case 0x04: //Digital input read
-                        break;
-
-                    case 0x06: //Analog input read
-                        break;
-
-                    case 0x08: //I2C read
-                        XMLOperation(task,payload.ToArray());
-                        break;
-
-                    case 0x0C: //XML
-                        break;
-
-                    case 0x0E: //Control Commands
-                        break;
-
-                    case 0x0F: //Emergency
+                   
+                    default:  //Part of a frame????????????????????
                         break;
 
 
-                    default:  //Reserved
-                        break;
 
-
-                }*/
             }
 
 
         }
+
+        private static void ControlCommands(List<byte> InFrame) {
+            var header = InFrame[0] & 0x0f;
+
+            switch (header)
+            {
+
+                case 0x01: //Unsucccessful data recieval
+                    MessageBox.Show("Unsucccessful data recieval");
+                    break;
+
+                case 0x02: //Successful Data Recieval
+                    MessageBox.Show("Successful Data Recieval");
+                    break;
+
+                case 0x03: //Buffer full (PCI + ACK RX thread buffer full)
+                    MessageBox.Show("Buffer full (PCI + ACK RX thread buffer full)");
+                    break;
+
+                case 0x04: //Network Error
+                    MessageBox.Show("Network Error");
+                    break;
+
+                case 0x05: //XML not set
+                    MessageBox.Show("XML not set");
+                    break;
+
+                case 0x06: //This motion locked due to emergency brake
+                    MessageBox.Show("This motion locked due to emergency brake");
+                    break;
+
+                case 0x07: //This motor stopped due to limit switch
+                    MessageBox.Show("This motor stopped due to limit switch");
+                    break;
+
+                case 0x08: //System Ready
+                    MessageBox.Show("System Ready");
+                    break;
+
+                default:  //Part of a frame????????????????????
+                    break;
+
+
+
+            }
+
+
+
+        }
+
+
 
         public static void XMLOperation(byte task, int[] xmlData)
         {
@@ -1006,7 +1001,7 @@ namespace EtherFACE1
         {
             writeData(FramGenerator(new byte[] { 0x65, 0x00 }));
             await Delay2();
-            buttonSyncOn.BackColor = Color.GreenYellow;
+            buttonSyncOn.BackColor = Color.Green;
             buttonSyncOff.BackColor = Color.Lavender;
 
             labelBootconfig.Text = "Synchronization is Activated !";
@@ -1016,7 +1011,7 @@ namespace EtherFACE1
         {
             writeData(FramGenerator(new byte[] { 0x66, 0x00 }));
             await Delay2();
-            buttonSyncOff.BackColor = Color.OrangeRed;
+            buttonSyncOff.BackColor = Color.Red;
             buttonSyncOn.BackColor = Color.Lavender;
 
             labelBootconfig.Text = "Synchronization is Deactivated !";
