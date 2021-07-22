@@ -634,7 +634,7 @@ namespace EtherFACE1
                     
                 }
 
-                MessageBox.Show(income.ToString());
+                //MessageBox.Show(income.ToString());
                 FrameDecoder(s.ToList());
             }
         }
@@ -644,9 +644,10 @@ namespace EtherFACE1
 
         private void FrameDecoder(List<byte> InFrame) {
 
-            if (InFrame.Count==5) {
+            if (InFrame[2]==0xff) {
 
                 readUpdater(InFrame[3]);
+                return;
             }
 
 
@@ -669,8 +670,7 @@ namespace EtherFACE1
                     
                 default:  //Part of a frame????????????????????
                     break;
-
-
+                    
 
             }
 
